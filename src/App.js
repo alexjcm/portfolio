@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import MainHome from "./components/home/MainHome";
 import About from "./components/about/About";
-import Projects from "./components/projects/Projects"
-import Contact from "./components/contact/Contact"
+import Projects from "./components/projects/Projects";
+import Contact from "./components/contact/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import './App.css';
+import "./App.css";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <Router>
-      <Preloader load={load} /> 
+      <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
         <ScrollToTop />

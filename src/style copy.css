@@ -254,18 +254,10 @@ html {
   }
 }
 
-#tsparticles {
-  position: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  width: 100%;
-  height: 100%;
-}
-
 .home-header {
   padding-top: 80px !important;
 }
-
+/*
 .home-section {
   position: relative;
   z-index: -1;
@@ -274,7 +266,7 @@ html {
   padding-bottom: 30px !important;
   padding-top: 30px !important;
 }
-
+*/
 .home-content {
   padding: 9rem 0 2rem !important;
   color: whitesmoke;
@@ -534,9 +526,8 @@ html {
   }
 }
 
-/************
-* TAG CLOUD *
-************/
+
+/* TAG CLOUD*/
 .tagcloud--item{
   color: var(--main-color);
   font-size: 20px;

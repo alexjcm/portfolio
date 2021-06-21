@@ -42,15 +42,16 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto" defaultActiveKey="#home">
-
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-               Home
+                Home
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/about"
+              <Nav.Link
+                as={Link}
+                to="/about"
                 onClick={() => updateExpanded(false)}
               >
                 About
@@ -58,21 +59,24 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/projects"
+              <Nav.Link
+                as={Link}
+                to="/projects"
                 onClick={() => updateExpanded(false)}
-              >              
+              >
                 Projects
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/contact"
+              <Nav.Link
+                as={Link}
+                to="/contact"
                 onClick={() => updateExpanded(false)}
               >
-               Contact
+                Contact
               </Nav.Link>
-            </Nav.Item>   
-
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

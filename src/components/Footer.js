@@ -1,9 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-} from "react-icons/ai";
+import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
@@ -21,18 +18,12 @@ function Footer() {
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
             <li className="social-icons">
-              <a
-                href="https://github.com/alexjcm"
-                style={{ color: "white" }}
-              >
+              <a href="https://github.com/alexjcm" style={{ color: "white" }}>
                 <AiFillGithub />
               </a>
             </li>
             <li className="social-icons">
-              <a
-                href="https://twitter.com/alexjhcm"
-                style={{ color: "white" }}
-              >
+              <a href="https://twitter.com/alexjhcm" style={{ color: "white" }}>
                 <AiOutlineTwitter />
               </a>
             </li>
@@ -43,7 +34,7 @@ function Footer() {
               >
                 <FaLinkedinIn />
               </a>
-            </li>     
+            </li>
           </ul>
         </Col>
       </Row>

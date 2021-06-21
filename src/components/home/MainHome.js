@@ -26,12 +26,10 @@ function MainHome() {
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
-  
-            </Col>
+            <Col md={5} style={{ paddingBottom: 20 }}></Col>
           </Row>
         </Container>
-      </Container> 
+      </Container>
       <SecondaryHome />
     </section>
   );
