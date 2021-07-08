@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
-import Preloader from "./components/Preload";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import Preloader from "./components/utils/Preload";
+import Navbar from "./components/utils/Navbar";
 import MainHome from "./components/home/MainHome";
 import About from "./components/about/About";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/utils/Footer";
+import ScrollToTop from "./components/utils/ScrollToTop";
 import "./App.css";
-import "./style.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [load, upadateLoad] = useState(true);

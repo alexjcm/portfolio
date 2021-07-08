@@ -1,7 +1,10 @@
 import React from "react";
+
 import GitHubCalendar from "react-github-calendar";
 import ReactTooltip from "react-tooltip";
 import { Row } from "react-bootstrap";
+
+import "./styles.css";
 
 function Github() {
   const colourTheme = {

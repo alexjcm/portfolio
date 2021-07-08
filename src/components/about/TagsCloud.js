@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+
+import "./styles.css";
+
 const tagcloud = require("TagCloud");
 
 function TagsCloud() {

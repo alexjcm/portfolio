@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Col, Row } from "react-bootstrap";
 import {
   SiLinux,
@@ -6,6 +7,8 @@ import {
   SiPostman,
   SiHeroku,
 } from "react-icons/si";
+
+import "./styles.css";
 
 function Toolstack() {
   return (

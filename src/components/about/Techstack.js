@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
@@ -10,6 +11,8 @@ import {
   DiGit,
 } from "react-icons/di";
 import { SiFirebase } from "react-icons/si";
+
+import "./styles.css";
 
 function Techstack() {
   return (

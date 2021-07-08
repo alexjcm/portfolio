@@ -1,8 +1,12 @@
 import React from "react";
+
 import { Container, Row, Col } from "react-bootstrap";
-import CustomParticles from "../CustomParticles";
+
+import CustomParticles from "../utils/CustomParticles";
 import SecondaryHome from "./SecondaryHome";
 import Type from "./Type";
+
+import "./styles.css";
 
 function MainHome() {
   return (
@@ -13,7 +17,7 @@ function MainHome() {
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There! <span className="wave">👋🏻</span>
+                Hi There!
               </h1>
 
               <h1 className="heading-name">

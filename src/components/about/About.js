@@ -1,11 +1,14 @@
 import React from "react";
+
 import { Container, Row, Col } from "react-bootstrap";
-import CustomParticles from "../CustomParticles";
+
+import CustomParticles from "../utils/CustomParticles";
 import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import TagsCloud from "./TagsCloud";
 import Toolstack from "./Toolstack";
+import "./styles.css";
 
 function About() {
   return (
