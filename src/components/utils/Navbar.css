@@ -1,17 +1,14 @@
 /******************/
-/* CCSS Variables */
+/* CSS Variables */
 /******************/
 html {
-
   /* DAY
-  Fondo principal - Turquesa: #6fdcbf */
-  /* Color fuente principal - Casi negro: #404040 */
- 
+  Fondo principal - Turquesa: #6fdcbf 
+   Color fuente principal - Casi negro: #404040 */
+
   /* NIGHT
   Fondo principal - morado:	#774069
-  Color fuente principal - casi blanco: #fafafa
-  
-  */
+  Color fuente principal - casi blanco: #fafafa  */
 
   --main-color: #08fdd8;
   --dark-color: #010038;
@@ -36,6 +33,16 @@ html {
   font-size: 1.2rem !important;
 }
 
+.light-nav-link {
+  color: var(--light-secondary-color-rgb) !important;
+}
+/*
+.navbar-nav .nav-link {
+  color: white !important;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}*/
+
 .navbar-toggler {
   padding: 0.25rem 1.5rem !important;
   position: relative !important;
@@ -55,11 +62,13 @@ html {
   opacity: 1 !important;
 }
 
-.navbar-toggler:focus, .navbar-toggler:active {
+.navbar-toggler:focus,
+.navbar-toggler:active {
   outline: 0 !important;
 }
 
-.navbar-toggler span:nth-child(1), .navbar-toggler span:nth-child(3) {
+.navbar-toggler span:nth-child(1),
+.navbar-toggler span:nth-child(3) {
   transition: transform 0.35s ease-in-out !important;
   transition: transform 0.35s ease-in-out !important;
 }
@@ -104,15 +113,8 @@ html {
 .logo {
   height: 2.3em !important;
   width: 2.3em !important;
+  border-radius: 50%;
 }
-
-/**/
-  .navbar-nav .nav-link {
-    color: white !important;
-    padding-right: 1rem !important;
-    padding-left: 1rem !important;
-  }
-  
 
 .nav-link {
   padding: 0.8rem 1rem !important;
@@ -137,7 +139,7 @@ html {
 }
 
 .navbar-nav .nav-item a::after {
-  content: "";
+  content: '';
   position: relative;
   display: block;
   height: 5px;

@@ -1,9 +1,6 @@
 /******************/
-
 /* CCSS Variables */
-
 /******************/
-
 html {
   --main-color: #08fdd8;
   --dark-secondary-color: #293A80;
@@ -12,17 +9,13 @@ html {
 }
 
 /*purple --> turquoise*/
-
 .purple {
   color: var(--main-color) !important;
 }
 
 /* --------- */
-
 /* Home section */
-
 /* --------- */
-
 #tsparticles {
   position: fixed !important;
   background-repeat: no-repeat !important;
