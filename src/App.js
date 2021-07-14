@@ -20,7 +20,6 @@ import './App.css';
 
 function App() {
   const [load, upadateLoad] = useState(true);
-
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 

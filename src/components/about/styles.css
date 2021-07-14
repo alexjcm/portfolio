@@ -1,9 +1,6 @@
 /******************/
-
 /* CCSS Variables */
-
 /******************/
-
 html {
   --section-background-color: linear-gradient( to bottom left, rgba(17, 16, 16, 0.582), rgba(12, 8, 24, 0.904));
   --main-color: #08fdd8;
@@ -13,11 +10,8 @@ html {
 }
 
 /* --------- */
-
 /* About */
-
 /* --------- */
-
 .about-section {
   position: relative !important;
   padding-top: 150px !important;
@@ -102,7 +96,6 @@ html {
 }
 
 /******************/
-
 .project-heading {
   color: white !important;
   font-size: 2.3em !important;
