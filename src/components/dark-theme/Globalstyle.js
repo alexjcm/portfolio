@@ -13,5 +13,7 @@ export const GlobalStyles = createGlobalStyle`
   h1,h1,h3,h4,h5,h6 {
     color: ${({theme}) => theme.text};
   }
+  .contact-info {
+    color:  ${({theme}) => theme.link};
+  }
    `;
-//font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;

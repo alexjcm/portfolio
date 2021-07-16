@@ -2,7 +2,11 @@
 /* CCSS Variables */
 /******************/
 html {
-  --section-background-color: linear-gradient( to bottom left, rgba(17, 16, 16, 0.582), rgba(12, 8, 24, 0.904));
+  --section-background-color: linear-gradient(
+    to bottom left,
+    rgba(17, 16, 16, 0.582),
+    rgba(12, 8, 24, 0.904)
+  );
   --main-color: #08fdd8;
   --tech-icon-color-rgba: rgba(15, 143, 195, 0.637);
   --tech-icon-color-box-shadow-rgba: rgba(1, 0, 56, 0.137);
@@ -16,7 +20,7 @@ html {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  background-image: white;
   color: white !important;
 }
 
@@ -54,7 +58,7 @@ html {
 
 .quote-card-view {
   border: none !important;
-  color: white !important;
+  color: black !important;
   background-color: transparent !important;
 }
 
@@ -89,7 +93,7 @@ html {
   z-index: 100 !important;
 }
 
-@media screen and (max-width:786px) {
+@media screen and (max-width: 786px) {
   .tags-cloud {
     float: unset;
   }

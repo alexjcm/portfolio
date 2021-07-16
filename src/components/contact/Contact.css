@@ -1,5 +1,42 @@
 .contact-section {
   position: relative !important;
-  padding: 150px !important;
+  padding: 150px 300px 150px 300px !important;
   color: white !important;
+}
+
+.contact-info {
+  padding-bottom: 10px;
+}
+
+.float-label {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.float-label input {
+  width: 100%;
+  height: 56px;
+  padding: 14px 16px 0 10px;
+}
+
+.float-label label {
+  padding: 0 12px;
+  color: #999;
+  pointer-events: none;
+  position: absolute;
+  transform: translate(0, 16px) scale(1);
+  transform-origin: top left;
+  transition: all 0.2s ease-out;
+}
+
+.float-label:focus-within label {
+  transform: translate(0, 12px) scale(0.75);
+}
+.float-label .Active {
+  transform: translate(0, 12px) scale(0.75);
+}
+
+.float-label .input-textarea {
+  padding-top: 25px;
 }

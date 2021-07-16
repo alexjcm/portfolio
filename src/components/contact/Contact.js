@@ -2,89 +2,106 @@ import React, {useState} from 'react';
 
 import {Form, Button} from 'react-bootstrap';
 
+import {validateEmail} from '../utils/util';
 import './Contact.css';
 
 function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  //const [subject, setSubject] = useState("");
   const [message, setMessage] = useState('');
-  const [errorMessages, setErrorMessages] = useState([]);
-  const [showErrors, setShowErrors] = useState(false);
+  const [nameIsActive, setNameIsActive] = useState(false);
+  const [emailIsActive, setEmailIsActive] = useState(false);
+  const [messageIsActive, setMessageIsActive] = useState(false);
+  const [validated, setValidated] = useState(false);
 
-  let errors = [];
-  function ValidateEmail(email) {
-    if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      return true;
-    }
-    return false;
-  }
+  const handleNameChange = (name) => {
+    setName(name);
+    name ? setNameIsActive(true) : setNameIsActive(false);
+  };
 
-  const formValidation = () => {
-    setErrorMessages([]);
-    const isNameValid = name !== '';
-    const isMessageValid = message !== '';
+  const handleEmailChange = (email) => {
+    setEmail(email);
+    email ? setEmailIsActive(true) : setEmailIsActive(false);
+  };
 
-    if (!isNameValid) {
-      errors.push('Name is not valid, please try again.');
+  const handleMessageChange = (message) => {
+    setMessage(message);
+    message ? setMessageIsActive(true) : setMessageIsActive(false);
+  };
+
+  const handleValidated = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
     }
-    if (!ValidateEmail(email)) {
-      errors.push('Email is not valid, please try again.');
-    }
-    if (email === '') {
-      errors.push('Email field is empty, please try again.');
-    }
-    if (!isMessageValid) {
-      errors.push('Message is not valid, please try again.');
-    }
-    if (errors.length > 0) {
-      setShowErrors({showErrors: true});
-      setErrorMessages(errors);
-    } else {
-      setShowErrors({showErrors: false});
-      alert('Email Sent');
-    }
+    setValidated(true);
   };
 
   return (
     <div className="contact-section">
-      <h2>
+      <h4 className="contact-info">
         Feel free to send an e-mail on alexjhcm@gmail.com <br />
         Alternatively, you can also drop-in a mail here!
-      </h2>
-      <Form>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            type="text"
-            onChange={(e) => setName({name: e.target.value})}
-            placeholder="Enter name"
-          />
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            onChange={(e) => setEmail({email: e.target.value})}
-            placeholder="name@example.com"
-          />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+      </h4>
+      <Form noValidate validated={validated} onSubmit={handleValidated}>
+        <Form.Group controlId="inputName">
+          <div className="float-label">
+            <Form.Control
+              type="text"
+              onChange={(e) => handleNameChange(e.target.value)}
+              required
+            />
+            <label htmlFor="inputName" className={nameIsActive ? 'Active' : ''}>
+              Name
+            </label>
+            <Form.Control.Feedback type="invalid">
+              Please enter a name.
+            </Form.Control.Feedback>
+          </div>
         </Form.Group>
-
-        <Form.Group controlId="controlTextarea1">
-          <Form.Label>Message</Form.Label>
-          <Form.Control
-            as="textarea"
-            onChange={(e) => setMessage({message: e.target.value})}
-            rows={3}
-          />
+        <Form.Group controlId="inputEmail">
+          <div className="float-label">
+            <Form.Control
+              required
+              type="email"
+              onChange={(e) => handleEmailChange(e.target.value)}
+            />
+            <label
+              htmlFor="inputEmail"
+              className={emailIsActive ? 'Active' : ''}>
+              Email
+            </label>
+            <Form.Control.Feedback type="invalid">
+              Please enter your email.
+            </Form.Control.Feedback>
+          </div>
         </Form.Group>
-        {showErrors
-          ? errorMessages.map((item, index) => {
-              return <ul key={index}>{item}</ul>;
-            })
-          : null}
-        <Button variant="primary" type="submit" onClick={formValidation}>
+        <Form.Group controlId="inputMessage">
+          <div className="float-label">
+            <Form.Control
+              className="input-textarea"
+              required
+              as="textarea"
+              onChange={(e) => handleMessageChange(e.target.value)}
+              rows={4}
+            />
+            <label
+              htmlFor="inputMessage"
+              className={messageIsActive ? 'Active' : ''}>
+              Message
+            </label>
+            <Form.Control.Feedback type="invalid">
+              Please enter your message.
+            </Form.Control.Feedback>
+          </div>
+        </Form.Group>
+        <Button
+          disabled={
+            name && email && validateEmail(email) && message ? false : true
+          }
+          variant="info"
+          type="submit">
           Submit
         </Button>
       </Form>

@@ -2,9 +2,9 @@
 /* CCSS Variables */
 /******************/
 html {
-  --secondary-color: #F0AE2E;
-  --secondary-color-hover: #A37417;
-  --dark-secondary-color: #293A80;
+  --secondary-color: #f0ae2e;
+  --secondary-color-hover: #a37417;
+  --dark-secondary-color: #293a80;
   --scrollbar-color: rgba(8, 99, 135, 0.73);
   --scrollbar-color-hover: rgba(15, 143, 195, 0.73);
 }
@@ -38,31 +38,12 @@ html {
   border-radius: 12px;
 }
 
-/**************/
-.btn-primary {
-  color: #fff !important;
-  background-color: var(--secondary-color) !important;
-  border-color: var(--secondary-color-hover) !important;
-}
-
-.btn-primary:hover {
-  color: #fff !important;
-  background-color: var(--secondary-color) !important;
-  border-color: var(--secondary-color-hover)!important;
-}
-
-.btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-
 /*************/
 /**   App  **/
 /************/
-.App {
+/*.App {
   text-align: center;
-}
+}*/
 
 .App-logo {
   height: 40vmin;
