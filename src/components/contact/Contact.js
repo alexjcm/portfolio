@@ -29,13 +29,46 @@ function Contact() {
     message ? setMessageIsActive(true) : setMessageIsActive(false);
   };
 
-  const handleValidated = (event) => {
+  const resetForm = () => {
+    setName('');
+    setEmail('');
+    setMessage('');
+  };
+
+  const handleSubmit = async (event) => {
+    // 01 Validated
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
     setValidated(true);
+
+    const bodyMsg = {
+      name: name,
+      from: email,
+      html: message,
+    };
+    //event.preventDefault();
+    // 02 Submit
+    await fetch('http://localhost:5000/send-mail', {
+      method: 'POST',
+      body: JSON.stringify(bodyMsg),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log('response --> ', response);
+        if (response.status === 'success') {
+          alert('Message Sent.');
+          resetForm();
+        } else if (response.status === 'fail') {
+          alert('Message failed to send!');
+        }
+      });
   };
 
   return (
@@ -44,7 +77,7 @@ function Contact() {
         Feel free to send an e-mail on alexjhcm@gmail.com <br />
         Alternatively, you can also drop-in a mail here!
       </h4>
-      <Form noValidate validated={validated} onSubmit={handleValidated}>
+      <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="inputName">
           <div className="float-label">
             <Form.Control

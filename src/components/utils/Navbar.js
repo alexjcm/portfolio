@@ -11,7 +11,6 @@ import './Navbar.css';
 import Toggle from '../dark-theme/Toggler';
 
 function NavBar(props) {
-  //const {theme, themeToggler} = this.props;
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 

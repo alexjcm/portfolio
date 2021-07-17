@@ -12,6 +12,7 @@ import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
 import Footer from './components/utils/Footer';
 import ScrollToTop from './components/utils/ScrollToTop';
+import CustomParticles from './components/utils/CustomParticles';
 
 import {useDarkMode} from './components/dark-theme/useDarkMode';
 import {GlobalStyles} from './components/dark-theme/Globalstyle';
@@ -35,6 +36,7 @@ function App() {
     <ThemeProvider theme={themeMode}>
       <>
         <GlobalStyles />
+        <CustomParticles />
         <Router>
           <Preloader load={load} />
           <div className="App" id={load ? 'no-scroll' : 'scroll'}>

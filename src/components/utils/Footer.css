@@ -1,19 +1,13 @@
 /******************/
-
 /* CCSS Variables */
-
 /******************/
-
 html {
   --dark-color: #010038;
 }
 
 /* --------- */
-
 /* Footer */
-
 /* --------- */
-
 .footer {
   background-color: var(--dark-color);
   bottom: 0 !important;

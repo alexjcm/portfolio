@@ -10,6 +10,8 @@ html {
   Fondo principal - morado:	#774069
   Color fuente principal - casi blanco: #fafafa  */
 
+  /*CASI BLANCO hsl(300, 11%, 96%)*/
+
   --main-color: #08fdd8;
   --dark-color: #010038;
   --dark-color-rgba: rgba(1, 0, 56, 0.171);

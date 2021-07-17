@@ -1,7 +1,6 @@
 /******************/
 /* CCSS Variables */
 /******************/
-
 html {
   --dark-color: #010038;
 }
@@ -9,7 +8,6 @@ html {
 /**************/
 /* Preloader */
 /**************/
-
 #preloader {
   position: fixed;
   top: 0;

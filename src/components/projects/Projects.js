@@ -8,7 +8,7 @@ import './styles.css';
 
 function Projects() {
   return (
-    <Container fluid className="project-section">
+    <Container fluid className="project-section">   
       <h1 className="project-heading">
         My Recent <strong className="purple">Works </strong>
       </h1>

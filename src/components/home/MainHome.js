@@ -2,7 +2,6 @@ import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
 
-import CustomParticles from "../utils/CustomParticles";
 import SecondaryHome from "./SecondaryHome";
 import Type from "./Type";
 
@@ -11,8 +10,7 @@ import "./styles.css";
 function MainHome() {
   return (
     <section>
-      <Container fluid className="home-section" id="home">
-        <CustomParticles />
+      <Container fluid className="home-section" id="home">       
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
