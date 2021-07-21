@@ -26,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "docker:build": "docker build -f Dockerfile.dev --rm -t portfolio-frontend-image .",
+    "docker:run": "docker run --rm -v /home/alexjcm/Documentos/projects/portfolio/portfolio-frontend:/portfolio-frontend -p 3000:3000 --name portfolio-frontend portfolio-frontend-image",
+    "docker:stop": "docker rm -f portfolio-frontend"
   },
   "eslintConfig": {
     "extends": [
