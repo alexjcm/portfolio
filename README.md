@@ -1,4 +1,6 @@
-# React app &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+# My Portfolio
+
+[![Build](https://github.com/alexjcm/porfolio/actions/workflows/build.yml/badge.svg)](https://github.com/alexjcm/portfolio/actions) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 ## Installation
 
