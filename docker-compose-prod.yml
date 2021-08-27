@@ -1,8 +1,12 @@
 version: '3'
+
 services:
-  markdown-editor:
+  portfolio:
     ports:
-      - "8080:80"
+      - "80:80"
+      - "443:443"
     build:
       context: .
       dockerfile: Dockerfile.prod
+    volumes:
+      - /etc/ssl/my-server:/etc/nginx/certs

@@ -15,22 +15,21 @@ function TagsCloud() {
       "Java",
       "HTML",
       "ReactJS",
-      "MongoDB",
       "Git",
       "REST",
       "JSON",
       "Webpack",
-      "Express",
       "Bootstrap",
-      "SQL",
+      "PostgresSql",
       "npm",
       "Jest",
       "NodeJS",
+      "Docker"
     ];
     const options = {
-      radius: 250,
+      radius: 270,
       maxSpeed: "slow",
-      initSpeed: "slow",
+      initSpeed: "sl7w",
       keep: false,
     };
     const tagCloud = tagcloud(container, texts, options);

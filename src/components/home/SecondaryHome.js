@@ -1,57 +1,45 @@
-import React from "react";
+import React from 'react';
 
-import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../assets/avatar.svg";
-import Tilt from "react-parallax-tilt";
-import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import {Container, Row, Col} from 'react-bootstrap';
+import versionControl from '../../assets/home/undraw_version_control.svg';
+import Tilt from 'react-parallax-tilt';
+import {AiFillGithub, AiOutlineTwitter} from 'react-icons/ai';
+import {FaLinkedinIn} from 'react-icons/fa';
 
-import "./styles.css";
+import './styles.css';
 
 function SecondaryHome() {
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
-          <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
+          <Col md={7} className="home-about-description">
+            <h1 style={{fontSize: '2.5em'}}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
-              <br />
-              <br />I am fluent in classics like
+              My favorite programming languages are the classic
               <i>
-                <b className="purple"> Java, Javascript and Python. </b>
+                <b className="purple"> Java and Javascript. </b>
               </i>
-              <br />
-              <br />
-              My field of Interest's are building new &nbsp;
+              Among my favorite frameworks are
               <i>
-                <b className="purple">Web Technologies and Products </b>
+                <b className="purple"> React.js and Node.js. </b>
               </i>
-              <br />
-              <br />
-              Whenever possible, I also apply my passion for developing products
-              with
-              <i>
-                <b className="purple"> Modern Javascript Frameworks</b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> Node.js and React.js</b>
-              </i>
+              My field of interest is building web-based software solutions.
             </p>
           </Col>
-          <Col md={4} className="myAvtar">
+          <Col md={5} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img src={versionControl} className="img-fluid" alt="avatar" />
             </Tilt>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
+            <br />
+            <br />
+            <br />
             <h1>FIND ME ON</h1>
             <p>
               Feel free to <span className="purple">connect </span>with me
@@ -62,19 +50,8 @@ function SecondaryHome() {
                   href="https://github.com/alexjcm"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
+                  className="icon-colour home-social-icons">
                   <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://twitter.com/alexjhcm"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
                 </a>
               </li>
               <li className="social-icons">
@@ -82,9 +59,17 @@ function SecondaryHome() {
                   href="https://www.linkedin.com/in/alex-john-chamba-macas/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
+                  className="icon-colour home-social-icons">
                   <FaLinkedinIn />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="https://twitter.com/alexjhcm"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour home-social-icons">
+                  <AiOutlineTwitter />
                 </a>
               </li>
             </ul>

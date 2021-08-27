@@ -1,32 +1,32 @@
 .project-heading {
   text-align: center;
-  color: black !important;
-  font-size: 2.3em !important;
-  font-weight: 500 !important;
-  padding-top: 10px !important;
+  color: black;
+  font-size: 2.3em;
+  font-weight: 500;
+  padding-top: 10px;
 }
 
 .project-section {
-  position: relative !important;
+  position: relative;
   padding: 150px 30px;
-  background-image: white !important;
+  background-image: white;
 }
 
 .project-card {
   padding: 25px;
-  height: auto !important;
+  height: auto;
 }
 
 .project-card-view {
-  box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
-  color: black !important;
-  background-color: transparent !important;
-  opacity: 0.9 !important;
-  transition: all 0.5s ease 0s !important;
-  height: 100% !important;
+  box-shadow: 0 4px 5px 3px rgba(23, 103, 105, 0.459);
+  color: black;
+  background-color: transparent;
+  opacity: 0.9;
+  transition: all 0.4s ease 0s;
+  height: 100%;
 }
 .project-card-view:hover {
-  transform: scale(1.02) !important;
-  overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+  transform: scale(1.02);
+  overflow: hidden;
+  box-shadow: 0 4px 4px 5px rgba(75, 202, 211, 0.561);
 }

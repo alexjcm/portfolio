@@ -3,29 +3,31 @@
 /******************/
 html {
   --main-color: #08fdd8;
-  --dark-secondary-color: #293A80;
-  --dark-secondary-color-hover: #4B60B4;
+  /*--dark-secondary-color: #293A80;*/
+  --dark-secondary-color: #1a989c;
+  /*--dark-secondary-color-hover: #4B60B4;*/
+  --dark-secondary-color-hover: #11837d;
   --light-secondary-color-rgba: rgba(255, 255, 255, 0.972);
 }
 
 /*purple --> turquoise*/
 .purple {
-  color: var(--main-color) !important;
+  color: var(--main-color);
 }
 
 /* --------- */
 /* Home section */
 /* --------- */
 #tsparticles {
-  position: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 100%;
 }
 
 .home-header {
-  padding-top: 80px !important;
+  padding-top: 80px;
 }
 
 .home-section {
@@ -33,24 +35,24 @@ html {
   z-index: -1;
   background-position: top center;
   background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .home-content {
-  padding: 9rem 0 2rem !important;
+  padding: 9rem 0 2rem;
   color: whitesmoke;
   text-align: left;
 }
 
 .heading {
-  font-size: 2.4em !important;
-  padding-left: 50px !important;
+  font-size: 2.4em;
+  padding-left: 50px;
 }
 
 .heading-name {
-  font-size: 2.5em !important;
-  padding-left: 45px !important;
+  font-size: 2.5em;
+  padding-left: 45px;
 }
 
 .main-name {
@@ -58,83 +60,86 @@ html {
 }
 
 .Typewriter__wrapper {
-  font-size: 2.2em !important;
-  color: var(--main-color)!important;
-  font-weight: 600 !important;
+  font-size: 2.2em;
+  color: var(--main-color);
+  font-weight: 600;
 }
 
 .Typewriter__cursor {
-  font-size: 2.4em !important;
-  color: var(--main-color) !important;
+  font-size: 2.4em;
+  color: var(--main-color);
 }
 
 @media (max-width: 767px) {
   .Typewriter__wrapper {
-    font-size: 1.4em !important;
-    font-weight: 500 !important;
-    position: absolute !important;
+    font-size: 1.4em;
+    font-weight: 500;
+    position: absolute;
   }
   .Typewriter__cursor {
-    display: none !important;
+    display: none;
   }
 }
 
 .myAvtar {
-  justify-content: center !important;
-  padding-top: 9em !important;
+  justify-content: center;
+  padding-top: 9em;
 }
 
 @media (max-width: 767px) {
   .myAvtar {
-    padding-top: 2em !important;
-    padding-bottom: 2em !important;
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
 }
 
 .home-about-section {
   position: relative;
-  padding-bottom: 70px !important;
-  padding-top: 70px !important;
+  padding-bottom: 70px;
+  padding-top: 70px;
 }
 
 .home-about-description {
-  color: black !important;
-  padding-top: 100px !important;
-  padding-bottom: 20px !important;
+  color: black;
+  padding-left: 0;
+  padding-top: 100px;
+  padding-bottom: 20px;
   text-align: center;
 }
 
 .home-about-body {
+  padding-left: 100px;
+  padding-right: 100px;
   padding-top: 50px;
-  font-size: 1.2em !important;
+  font-size: 1.2em;
   text-align: left;
 }
 
 .home-about-social {
-  text-align: center !important;
+  text-align: center;
   padding-top: 25px;
-  color: white !important;
+  color: white;
 }
 
 .home-about-social-links {
-  justify-content: center !important;
-  padding-top: 15px !important;
-  display: inline-block !important;
-  position: relative !important;
-  padding-inline-start: 0 !important;
+  justify-content: center;
+  padding-top: 15px;
+  display: inline-block;
+  position: relative;
+  padding-inline-start: 0;
 }
 
 .home-social-icons {
-  position: relative !important;
-  display: inline-block !important;
-  width: 40px !important;
-  height: 40px !important;
-  text-align: center !important;
-  font-size: 1.2em !important;
-  line-height: 2em !important;
-  background: var(--light-secondary-color-rgba) !important;
-  border-radius: 50% !important;
-  transition: 0.5s !important;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 2em;
+  background: var(--light-secondary-color-rgba);
+  border-radius: 50%;
+  transition: 0.5s;
 }
 
 .home-social-icons::before {
@@ -163,11 +168,11 @@ html {
 }
 
 .social-icons {
-  display: inline-block !important;
+  display: inline-block;
   padding-right: 15px;
   padding-left: 15px;
 }
 
 .icon-colour {
-  color: var(--dark-secondary-color) !important;
+  color: var(--dark-secondary-color);
 }

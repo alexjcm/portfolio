@@ -51,14 +51,13 @@ function NavBar(props) {
           <Nav className="ml-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link
-                className={navColour ? 'light-nav-link' : ''}
+                className={navColour ? 'my-light-nav-link' : 'my-light-nav-link2'}
                 as={Link}
                 to="/"
                 onClick={() => updateExpanded(false)}>
                 Home
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
                 className={navColour ? 'light-nav-link' : ''}
@@ -68,7 +67,6 @@ function NavBar(props) {
                 About
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
                 className={navColour ? 'light-nav-link' : ''}
@@ -78,7 +76,6 @@ function NavBar(props) {
                 Projects
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
                 className={navColour ? 'light-nav-link' : ''}

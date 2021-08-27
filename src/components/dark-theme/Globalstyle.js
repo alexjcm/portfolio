@@ -10,10 +10,13 @@ export const GlobalStyles = createGlobalStyle`
   .navbar-light .navbar-nav .nav-link {
     color:  ${({theme}) => theme.link};
   }
-  h1,h1,h3,h4,h5,h6 {
+  h1,h2,h3,h4,h5,h6,p {
     color: ${({theme}) => theme.text};
   }
   .contact-info {
+    color:  ${({theme}) => theme.link};
+  }
+  .project-heading, .card-title, .icon-tech-color {
     color:  ${({theme}) => theme.link};
   }
    `;

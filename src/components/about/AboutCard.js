@@ -1,30 +1,19 @@
-import React from "react";
+import React from 'react';
 
-import Card from "react-bootstrap/Card";
-import { ImPointRight } from "react-icons/im";
-import "./styles.css";
+import Card from 'react-bootstrap/Card';
+import './styles.css';
 
 function AboutCard() {
   return (
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Alex Chamba </span>
-            from <span className="purple"> Loja, Ecuador.</span>
-            <br />I am a Software Develoer.
-            <br />
-            <br />
-            Apart from coding, some other activities that I love to do!
+          <p style={{textAlign: 'justify'}}>
+            Hi everyone, I am <span className="purple">Alex John Chamba</span>,
+            I am from <span className="purple"> Loja, Ecuador.</span>
+            <br />I am a Software Developer and an enthusiast of new <br />
+            technologies related to the software industry.
           </p>
-          <ul>
-            <li className="about-activity">
-              <ImPointRight /> Playing Games
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Writting Tech Blogs
-            </li>
-          </ul>
         </blockquote>
       </Card.Body>
     </Card>

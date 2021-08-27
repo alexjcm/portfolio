@@ -8,8 +8,8 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 0.4rem;
   padding: 0.1rem;
-  width: 5rem;
-  height: 3rem;
+  width: 4rem;
+  height: 2.3rem;
 `;
 
 const Sun = styled.svg`

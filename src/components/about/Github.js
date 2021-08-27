@@ -10,11 +10,11 @@ function Github() {
   const colourTheme = {
     background: "transparent",
     text: "#ffffff",
-    grade4: "hsl(197, 88%, 28%)",
-    grade3: "hsl(197, 88%, 30%)",
-    grade2: "hsl(197, 88%, 40%)",
-    grade1: "hsl(197, 88%, 50%)",
-    grade0: "hsl(197, 88%, 95%)",
+    grade4: "hsl(172, 88%, 28%)",
+    grade3: "hsl(172, 88%, 30%)",
+    grade2: "hsl(172, 88%, 40%)",
+    grade1: "hsl(172, 88%, 50%)",
+    grade0: "hsl(172, 88%, 95%)",
   };
   
   return (

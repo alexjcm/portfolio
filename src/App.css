@@ -4,7 +4,8 @@
 html {
   --secondary-color: #f0ae2e;
   --secondary-color-hover: #a37417;
-  --dark-secondary-color: #293a80;
+  /*--dark-secondary-color: #293a80;*/
+  --dark-secondary-color: #1a7c77;
   --scrollbar-color: rgba(8, 99, 135, 0.73);
   --scrollbar-color-hover: rgba(15, 143, 195, 0.73);
 }

@@ -1,29 +1,55 @@
-import React from "react";
+import React from 'react';
 
-import { Col, Row } from "react-bootstrap";
+import {Col, Row} from 'react-bootstrap';
 import {
   SiLinux,
   SiVisualstudiocode,
   SiPostman,
-  SiHeroku,
-} from "react-icons/si";
+  SiGit,
+  SiGithubactions,
+  SiDocker,
+  SiApachenetbeanside,
+} from 'react-icons/si';
 
-import "./styles.css";
+import './styles.css';
 
 function Toolstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+    <Row style={{justifyContent: 'center', paddingBottom: '50px'}}>
       <Col xs={4} md={2} className="tech-icons">
-        <SiLinux />
+        <div className="icon-tech-color">
+          <SiDocker />
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
+        <div className="icon-tech-color">
+          <SiGit />
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiPostman />
+        <div className="icon-tech-color">
+          <SiLinux />
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiHeroku />
+        <div className="icon-tech-color">
+          <SiVisualstudiocode />
+        </div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <div className="icon-tech-color">
+          <SiApachenetbeanside />
+        </div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <div className="icon-tech-color">
+          <SiPostman />
+        </div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <div className="icon-tech-color">
+          <SiGithubactions />
+        </div>
       </Col>
     </Row>
   );
