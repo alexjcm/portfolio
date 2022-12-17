@@ -7,5 +7,5 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      - /home/alexjcm/Documentos/projects/portfolio-frontend:/portfolio-frontend
+      - /home/ajcm/Documentos/projects/portfolio-frontend:/portfolio-frontend
     working_dir: /portfolio-frontend

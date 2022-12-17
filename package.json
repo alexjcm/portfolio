@@ -1,6 +1,6 @@
 {
   "name": "porftolio-frontend",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -9,18 +9,18 @@
     "TagCloud": "^2.2.0",
     "bootstrap": "^4.6.0",
     "react": "^17.0.2",
-    "react-bootstrap": "^1.6.1",
+    "react-bootstrap": "^1.6.6",
     "react-dom": "^17.0.2",
-    "react-github-calendar": "^2.0.2",
-    "react-icons": "^4.2.0",
-    "react-parallax-tilt": "^1.5.28",
+    "react-github-calendar": "^3.4.0",
+    "react-icons": "^4.7.1",
+    "react-parallax-tilt": "^1.7.76",
     "react-particles-js": "^3.4.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "react-tooltip": "^4.2.21",
-    "typewriter-effect": "^2.18.0",
-    "web-vitals": "^1.0.1",
-    "styled-components": "^5.3.0"
+    "react-tooltip": "^4.5.1",
+    "typewriter-effect": "^2.19.0",
+    "web-vitals": "^3.1.0",
+    "styled-components": "^5.3.6"
   },
   "scripts": {
     "start": "react-scripts start",
