@@ -8,5 +8,3 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
-    volumes:
-      - /etc/ssl/my-server:/etc/nginx/certs
