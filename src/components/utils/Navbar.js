@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
@@ -25,11 +25,7 @@ function NavBar(props) {
   window.addEventListener('scroll', scrollHandler);
 
   return (
-    <Navbar
-      expanded={expand}
-      fixed="top"
-      expand="md"
-      className={navColour ? 'sticky' : 'navbar'}>
+    <Navbar expanded={expand} fixed="top" expand="md" className={navColour ? 'sticky' : 'navbar'}>
       <Container>
         <Navbar.Brand href="/">
           <img
@@ -42,7 +38,8 @@ function NavBar(props) {
           aria-controls="responsive-navbar-nav"
           onClick={() => {
             updateExpanded(expand ? false : 'expanded');
-          }}>
+          }}
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -54,7 +51,8 @@ function NavBar(props) {
                 className={navColour ? 'my-light-nav-link' : 'my-light-nav-link2'}
                 as={Link}
                 to="/"
-                onClick={() => updateExpanded(false)}>
+                onClick={() => updateExpanded(false)}
+              >
                 Home
               </Nav.Link>
             </Nav.Item>
@@ -63,7 +61,8 @@ function NavBar(props) {
                 className={navColour ? 'light-nav-link' : ''}
                 as={Link}
                 to="/about"
-                onClick={() => updateExpanded(false)}>
+                onClick={() => updateExpanded(false)}
+              >
                 About
               </Nav.Link>
             </Nav.Item>
@@ -72,7 +71,8 @@ function NavBar(props) {
                 className={navColour ? 'light-nav-link' : ''}
                 as={Link}
                 to="/projects"
-                onClick={() => updateExpanded(false)}>
+                onClick={() => updateExpanded(false)}
+              >
                 Projects
               </Nav.Link>
             </Nav.Item>
@@ -81,7 +81,8 @@ function NavBar(props) {
                 className={navColour ? 'light-nav-link' : ''}
                 as={Link}
                 to="/contact"
-                onClick={() => updateExpanded(false)}>
+                onClick={() => updateExpanded(false)}
+              >
                 Contact
               </Nav.Link>
             </Nav.Item>

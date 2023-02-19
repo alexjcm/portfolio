@@ -47,7 +47,7 @@ html {
 }
 
 .tech-icons:hover {
-  transform: scale(1.0);
+  transform: scale(1);
   overflow: hidden;
   border: 1.6px solid var(--tech-icon-color-hover-rgba);
 }

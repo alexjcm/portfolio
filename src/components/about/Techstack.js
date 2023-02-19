@@ -1,19 +1,13 @@
 import React from 'react';
 
-import {Col, Row} from 'react-bootstrap';
-import {
-  DiJava,
-  DiJavascript1,
-  DiReact,
-  DiNodejs,
-  DiPython,
-} from 'react-icons/di';
+import { Col, Row } from 'react-bootstrap';
+import { DiJava, DiJavascript1, DiReact, DiNodejs, DiPython } from 'react-icons/di';
 
 import './styles.css';
 
 function Techstack() {
   return (
-    <Row style={{justifyContent: 'center', paddingBottom: '50px'}}>
+    <Row style={{ justifyContent: 'center', paddingBottom: '50px' }}>
       <Col xs={4} md={2} className="tech-icons">
         <div className="icon-tech-color">
           <DiJava />

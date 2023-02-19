@@ -1,12 +1,11 @@
 import React from 'react';
 
-import {Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import projectSample from '../../assets/projects/sample-min.png';
 import markdownEditor from '../../assets/projects/markdown-editor.png';
 import cryptoTracker from '../../assets/projects/crypto-tracker.png';
 import covidTracker from '../../assets/projects/covid-tracker.png';
-import cocomo2 from '../../assets/projects/cocomo2.png';
 import mlApp from '../../assets/projects/ml-app.png';
 import CardProject from './CardProject';
 import './styles.css';
@@ -17,7 +16,7 @@ function Projects() {
       <h1 className="project-heading">
         My Recent <strong className="purple">Works </strong>
       </h1>
-      <Row style={{justifyContent: 'center', paddingBottom: '10px'}}>
+      <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>
         <Col md={4} className="project-card">
           <CardProject
             imgPath={markdownEditor}
@@ -47,15 +46,7 @@ function Projects() {
             imgPath={projectSample}
             title="Electronic Certification Module"
             description="Web solution that automates the academic certification process for students of the Systems Engineering/Computation career at the Universidad Nacional de Loja."
-            link="http://34.125.81.160/bonita/"
-          />
-        </Col>
-        <Col md={4} className="project-card">
-          <CardProject
-            imgPath={cocomo2}
-            title="Calculating function points"
-            description="Web application for software cost estimation through function points of the Cocomo 2 model."
-            link="https://enigmatic-coast-86151.herokuapp.com/faces/index.xhtml"
+            link="https://computacion.unl.edu.ec/bonita/"
           />
         </Col>
         <Col md={4} className="project-card">

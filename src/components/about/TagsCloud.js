@@ -1,35 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import "./styles.css";
+import './styles.css';
 
-const tagcloud = require("TagCloud");
+const tagcloud = require('TagCloud');
 
 function TagsCloud() {
   useEffect(() => {
-    const container = ".tags-cloud";
+    const container = '.tags-cloud';
     const texts = [
-      "Python",
-      "Flask",
-      "Javascript",
-      "CSS",
-      "Java",
-      "HTML",
-      "ReactJS",
-      "Git",
-      "REST",
-      "JSON",
-      "Webpack",
-      "Bootstrap",
-      "PostgresSql",
-      "npm",
-      "Jest",
-      "NodeJS",
-      "Docker"
+      'Python',
+      'Flask',
+      'Javascript',
+      'CSS',
+      'Java',
+      'HTML',
+      'ReactJS',
+      'Git',
+      'REST',
+      'JSON',
+      'Webpack',
+      'Bootstrap',
+      'PostgresSql',
+      'npm',
+      'Jest',
+      'NodeJS',
+      'Docker',
     ];
     const options = {
       radius: 270,
-      maxSpeed: "slow",
-      initSpeed: "sl7w",
+      maxSpeed: 'slow',
+      initSpeed: 'sl7w',
       keep: false,
     };
     const tagCloud = tagcloud(container, texts, options);

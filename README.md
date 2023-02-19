@@ -26,11 +26,13 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 ## Deployment with docker
 
 Start container:
+
 ```
 #docker-compose -f docker-compose-prod.yml up --build -d
 ```
 
 Stop container:
+
 ```
 #docker-compose -f docker-compose-prod.yml down -v --remove-orphans
 ```
