@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { BiLinkExternal } from 'react-icons/bi';
 
 function CardProject(props) {

@@ -28,14 +28,22 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 Start container:
 
 ```
+docker build -t portfolio -f DockerfileProLite .
+docker run --rm -d -p 8080:80 --name my-portfolio portfolio
+
 #docker-compose -f docker-compose-prod.yml up --build -d
 ```
 
 Stop container:
 
 ```
+docker stop portafolio
 #docker-compose -f docker-compose-prod.yml down -v --remove-orphans
 ```
+
+## Conventional commits
+
+[Commit messages conventions](https://gist.github.com/alexjcm/6cc0a0a1ed96c85675a9d92706e1099d)
 
 ### License
 

@@ -1,14 +1,13 @@
 import React from 'react';
-
 import { Col, Row } from 'react-bootstrap';
 import {
-  SiLinux,
-  SiVisualstudiocode,
-  SiPostman,
+  SiApachenetbeanside,
+  SiDocker,
   SiGit,
   SiGithubactions,
-  SiDocker,
-  SiApachenetbeanside,
+  SiLinux,
+  SiPostman,
+  SiVisualstudiocode,
 } from 'react-icons/si';
 
 import './styles.css';

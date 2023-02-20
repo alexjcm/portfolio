@@ -1,12 +1,12 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 
-import { Container, Row, Col } from 'react-bootstrap';
-import Github from './Github';
-import Techstack from './Techstack';
 import Aboutcard from './AboutCard';
-import TagsCloud from './TagsCloud';
-import Toolstack from './Toolstack';
+import Github from './Github';
 import './styles.css';
+import TagsCloud from './TagsCloud';
+import Techstack from './Techstack';
+import Toolstack from './Toolstack';
 
 function About() {
   return (

@@ -1,7 +1,0 @@
-# Build Stage Start
-FROM node:14-alpine as builder
-WORKDIR /portfolio-frontend
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN yarn build

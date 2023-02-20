@@ -1,11 +1,10 @@
 import React from 'react';
-
-import { Container, Row, Col } from 'react-bootstrap';
-import versionControl from '../../assets/home/undraw_version_control.svg';
-import Tilt from 'react-parallax-tilt';
+import { Col, Container, Row } from 'react-bootstrap';
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
+import Tilt from 'react-parallax-tilt';
 
+import versionControl from '../../assets/home/undraw_version_control.svg';
 import './styles.css';
 
 function SecondaryHome() {

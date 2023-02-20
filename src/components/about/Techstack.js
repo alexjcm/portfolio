@@ -1,7 +1,6 @@
 import React from 'react';
-
 import { Col, Row } from 'react-bootstrap';
-import { DiJava, DiJavascript1, DiReact, DiNodejs, DiPython } from 'react-icons/di';
+import { DiJava, DiJavascript1, DiNodejs, DiPython, DiReact } from 'react-icons/di';
 
 import './styles.css';
 

@@ -1,9 +1,8 @@
 import React from 'react';
-
-import GitHubCalendar from 'react-github-calendar';
-import 'react-tooltip/dist/react-tooltip.css';
-import { Tooltip } from 'react-tooltip';
 import { Row } from 'react-bootstrap';
+import GitHubCalendar from 'react-github-calendar';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 import './styles.css';
 

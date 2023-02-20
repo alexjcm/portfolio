@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-
-import { Link } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-
 import Container from 'react-bootstrap/Container';
-import logoLight from '../../assets/logo_light_aj167.jpg';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
+
 import logoDark from '../../assets/logo_dark_aj167.jpg';
-import './Navbar.css';
+import logoLight from '../../assets/logo_light_aj167.jpg';
 import Toggle from '../dark-theme/Toggler';
+import './Navbar.css';
 
 function NavBar(props) {
   const [expand, updateExpanded] = useState(false);

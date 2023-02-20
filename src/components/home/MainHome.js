@@ -1,12 +1,10 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 
-import { Container, Row, Col } from 'react-bootstrap';
-
-import SecondaryHome from './SecondaryHome';
-import Type from './Type';
 import progressiveApp from '../../assets/home/undraw_progressive_app.svg';
-
+import SecondaryHome from './SecondaryHome';
 import './styles.css';
+import Type from './Type';
 
 function MainHome() {
   return (
