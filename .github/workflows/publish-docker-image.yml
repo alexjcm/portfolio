@@ -1,4 +1,4 @@
-name: Publish docker image (CI)
+name: Publish docker image
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   push_to_registry:
-    name: Push docker image to Docker Hub
+    name: CI - Push docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -49,3 +49,12 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:latest
           #tags: ${{ steps.meta.outputs.tags }}
           #labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          repository: peterevans/dockerhub-description
+          short-description: ${{ github.event.repository.description }}
+          readme-filepath: README.md
