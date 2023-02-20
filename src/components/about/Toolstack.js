@@ -1,21 +1,20 @@
 import React from 'react';
-
-import {Col, Row} from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import {
-  SiLinux,
-  SiVisualstudiocode,
-  SiPostman,
+  SiApachenetbeanside,
+  SiDocker,
   SiGit,
   SiGithubactions,
-  SiDocker,
-  SiApachenetbeanside,
+  SiLinux,
+  SiPostman,
+  SiVisualstudiocode,
 } from 'react-icons/si';
 
 import './styles.css';
 
 function Toolstack() {
   return (
-    <Row style={{justifyContent: 'center', paddingBottom: '50px'}}>
+    <Row style={{ justifyContent: 'center', paddingBottom: '50px' }}>
       <Col xs={4} md={2} className="tech-icons">
         <div className="icon-tech-color">
           <SiDocker />

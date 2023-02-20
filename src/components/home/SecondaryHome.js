@@ -1,11 +1,10 @@
 import React from 'react';
-
-import {Container, Row, Col} from 'react-bootstrap';
-import versionControl from '../../assets/home/undraw_version_control.svg';
+import { Col, Container, Row } from 'react-bootstrap';
+import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
+import { FaLinkedinIn } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
-import {AiFillGithub, AiOutlineTwitter} from 'react-icons/ai';
-import {FaLinkedinIn} from 'react-icons/fa';
 
+import versionControl from '../../assets/home/undraw_version_control.svg';
 import './styles.css';
 
 function SecondaryHome() {
@@ -14,7 +13,7 @@ function SecondaryHome() {
       <Container>
         <Row>
           <Col md={7} className="home-about-description">
-            <h1 style={{fontSize: '2.5em'}}>
+            <h1 style={{ fontSize: '2.5em' }}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
@@ -50,7 +49,8 @@ function SecondaryHome() {
                   href="https://github.com/alexjcm"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons">
+                  className="icon-colour home-social-icons"
+                >
                   <AiFillGithub />
                 </a>
               </li>
@@ -59,7 +59,8 @@ function SecondaryHome() {
                   href="https://www.linkedin.com/in/alex-john-chamba-macas/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons">
+                  className="icon-colour home-social-icons"
+                >
                   <FaLinkedinIn />
                 </a>
               </li>
@@ -68,7 +69,8 @@ function SecondaryHome() {
                   href="https://twitter.com/alexjhcm"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons">
+                  className="icon-colour home-social-icons"
+                >
                   <AiOutlineTwitter />
                 </a>
               </li>

@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
 
-import {Form, Button} from 'react-bootstrap';
-
-import {validateEmail} from '../utils/util';
+import { validateEmail } from '../utils/util';
 import './Contact.css';
 
 function Contact() {
@@ -80,17 +79,11 @@ function Contact() {
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="inputName">
           <div className="float-label">
-            <Form.Control
-              type="text"
-              onChange={(e) => handleNameChange(e.target.value)}
-              required
-            />
+            <Form.Control type="text" onChange={(e) => handleNameChange(e.target.value)} required />
             <label htmlFor="inputName" className={nameIsActive ? 'Active' : ''}>
               Name
             </label>
-            <Form.Control.Feedback type="invalid">
-              Please enter a name.
-            </Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">Please enter a name.</Form.Control.Feedback>
           </div>
         </Form.Group>
         <Form.Group controlId="inputEmail">
@@ -100,14 +93,10 @@ function Contact() {
               type="email"
               onChange={(e) => handleEmailChange(e.target.value)}
             />
-            <label
-              htmlFor="inputEmail"
-              className={emailIsActive ? 'Active' : ''}>
+            <label htmlFor="inputEmail" className={emailIsActive ? 'Active' : ''}>
               Email
             </label>
-            <Form.Control.Feedback type="invalid">
-              Please enter your email.
-            </Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">Please enter your email.</Form.Control.Feedback>
           </div>
         </Form.Group>
         <Form.Group controlId="inputMessage">
@@ -119,22 +108,17 @@ function Contact() {
               onChange={(e) => handleMessageChange(e.target.value)}
               rows={4}
             />
-            <label
-              htmlFor="inputMessage"
-              className={messageIsActive ? 'Active' : ''}>
+            <label htmlFor="inputMessage" className={messageIsActive ? 'Active' : ''}>
               Message
             </label>
-            <Form.Control.Feedback type="invalid">
-              Please enter your message.
-            </Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">Please enter your message.</Form.Control.Feedback>
           </div>
         </Form.Group>
         <Button
-          disabled={
-            name && email && validateEmail(email) && message ? false : true
-          }
+          disabled={name && email && validateEmail(email) && message ? false : true}
           variant="info"
-          type="submit">
+          type="submit"
+        >
           Submit
         </Button>
       </Form>
