@@ -44,7 +44,7 @@ jobs:
         with:
           # context: "{{defaultContext}}:mysubdir"
           context: .
-          file: docker/DockerfileProLite
+          file: docker/DockerfilePro
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:latest
           #tags: ${{ steps.meta.outputs.tags }}
