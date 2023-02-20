@@ -11,6 +11,6 @@ jobs:
       - name: Check Commit Type
         uses: gsactions/commit-message-checker@v1
         with:
-          pattern: '^\[[A-Z]+\]:\s\w{3,15}\s*:\s*.+$'
+          pattern: '/^(Merge\s|Version\s)?\[[A-Z]{3,15}\]:.*$/'
           flags: "gm"
           error: 'Your first line has to contain a commit type like "[ADD]: | [REF]: | [IMP]:", etc'
