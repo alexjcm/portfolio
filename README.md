@@ -1,6 +1,6 @@
 # My Portfolio
 
-[![Build](https://github.com/alexjcm/portfolio/actions/workflows/build.yml/badge.svg)](https://github.com/alexjcm/portfolio/actions/workflows/build.yml) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg) [![Publish docker image (CI)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml/badge.svg?branch=main)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg) [![Publish docker image (CI)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml/badge.svg?branch=main)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml)
 
 ## Prerrequsites
 
@@ -28,7 +28,7 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 Build image:
 
 ```
-docker build -t portfolio -f docker/DockerfileProLite .
+docker build -t portfolio -f docker/DockerfilePro .
 ```
 
 Start container:
