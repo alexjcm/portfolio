@@ -15,10 +15,10 @@ RUN npm run build
 
 
 ## Runner Stage
-# Utiliza una imagen base más liviana para desplegar la aplicación
+# Uses a lighter base image to deploy the application
 FROM nginx:alpine
 
-# Copia los archivos de construcción de la aplicación React desde la imagen anterior al directorio de trabajo de Nginx
+# Copy the React application build files from the above image to the Nginx working directory
 COPY --from=build-stage /app/build /usr/share/nginx/html
 
 # Copy Nginx configuration to container
@@ -27,5 +27,5 @@ COPY --from=build-stage /app/docker/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
-# Inicia Nginx en primer plano cuando se inicia el contenedor
+# Starts Nginx in the foreground when the container starts up
 CMD ["nginx", "-g", "daemon off;"]
