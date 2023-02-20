@@ -6,3 +6,4 @@ Dockerfile*
 npm-debug.log
 README.md
 node_modules
+build
