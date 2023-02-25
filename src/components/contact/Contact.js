@@ -29,6 +29,9 @@ function Contact() {
   };
 
   const resetForm = () => {
+    console.log('Clean contact form');
+    handleNameChange('');
+
     setName('');
     setEmail('');
     setMessage('');
@@ -45,37 +48,38 @@ function Contact() {
 
     const bodyMsg = {
       name: name,
-      from: email,
-      html: message,
+      to: email,
+      message: message,
     };
-    //event.preventDefault();
+
+    event.preventDefault();
+
     // 02 Submit
-    await fetch('http://localhost:5000/send-mail', {
+    await fetch('https://alexjcm.me/mailer/sendMail', {
       method: 'POST',
       body: JSON.stringify(bodyMsg),
       headers: {
-        Accept: 'application/json',
         'Content-Type': 'application/json',
       },
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log('response --> ', response);
+        console.log('response: ', response);
         if (response.status === 'success') {
-          alert('Message Sent.');
+          alert('Message sent :)');
           resetForm();
         } else if (response.status === 'fail') {
           alert('Message failed to send!');
         }
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
   return (
     <div className="contact-section">
-      <h4 className="contact-info">
-        Feel free to send an e-mail on alexjhcm@gmail.com <br />
-        Alternatively, you can also drop-in a mail here!
-      </h4>
+      <h4 className="contact-info">Feel free drop-in a mail here!</h4>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="inputName">
           <div className="float-label">
