@@ -25,6 +25,7 @@ function TagsCloud() {
       'Jest',
       'NodeJS',
       'Docker',
+      'Digital Ocean',
     ];
     const options = {
       radius: 270,
