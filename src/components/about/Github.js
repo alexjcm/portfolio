@@ -1,21 +1,20 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import GitHubCalendar from 'react-github-calendar';
-import { Tooltip } from 'react-tooltip';
-import 'react-tooltip/dist/react-tooltip.css';
+import ReactTooltip from 'react-tooltip';
 
 import './styles.css';
 
 function Github() {
-  const colourTheme = {
-    background: 'transparent',
-    text: '#ffffff',
-    grade4: 'hsl(172, 88%, 28%)',
-    grade3: 'hsl(172, 88%, 30%)',
-    grade2: 'hsl(172, 88%, 40%)',
-    grade1: 'hsl(172, 88%, 50%)',
-    grade0: 'hsl(172, 88%, 95%)',
-  };
+  // const colourTheme = {
+  //   background: 'transparent',
+  //   text: '#ffffff',
+  //   grade4: 'rgb(235, 237, 240)',
+  //   grade3: 'rgb(155, 233, 168)',
+  //   grade2: 'rgb(64, 196, 99)',
+  //   grade1: 'rgb(48, 161, 78)',
+  //   grade0: 'rgb(33, 110, 57)',
+  // };
 
   return (
     <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>
@@ -26,10 +25,10 @@ function Github() {
         username="alexjcm"
         blockSize={14}
         blockMargin={5}
-        theme={colourTheme}
+        // theme={colourTheme}
         fontSize={16}
       >
-        <Tooltip id="my-tooltip" delayShow={50} html />
+        <ReactTooltip html />
       </GitHubCalendar>
     </Row>
   );

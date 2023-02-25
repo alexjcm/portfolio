@@ -23,13 +23,13 @@ function SecondaryHome() {
               </i>
               Among my favorite frameworks are
               <i>
-                <b className="purple"> React.js and Node.js. </b>
+                <b className="purple"> Spring Boot and Node.js. </b>
               </i>
               My field of interest is building web-based software solutions.
             </p>
           </Col>
           <Col md={5} className="myAvtar">
-            <Tilt>
+            <Tilt reset={false} tiltReverse={true}>
               <img src={versionControl} className="img-fluid" alt="avatar" />
             </Tilt>
           </Col>

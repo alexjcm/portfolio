@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,19 +15,18 @@ import Projects from './components/projects/Projects';
 import CustomParticles from './components/utils/CustomParticles';
 import Footer from './components/utils/Footer';
 import Navbar from './components/utils/Navbar';
-import Preloader from './components/utils/Preload';
 import ScrollToTop from './components/utils/ScrollToTop';
 
 function App() {
-  const [load, upadateLoad] = useState(true);
+  // const [load, upadateLoad] = useState(true);
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
-  useEffect(() => {
-    setTimeout(() => {
-      upadateLoad(false);
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     upadateLoad(false);
+  //   }, 1000);
+  // }, []);
 
   if (!mountedComponent) return <div />;
 
@@ -37,8 +36,9 @@ function App() {
         <GlobalStyles />
         <CustomParticles />
         <Router>
-          <Preloader load={load} />
-          <div className="App" id={load ? 'no-scroll' : 'scroll'}>
+          {/* <Preloader load={load} /> */}
+          {/* <div className="App" id={load ? 'no-scroll' : 'scroll'}> */}
+          <div className="App" id="scroll">
             <Navbar theme={theme} toggleTheme={themeToggler} />
             <ScrollToTop />
             <Switch>
