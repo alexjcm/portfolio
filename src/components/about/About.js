@@ -29,7 +29,7 @@ function About() {
                 paddingLeft: '20px',
               }}
             >
-              Who <strong className="purple">I`&apos;M</strong>
+              Who <strong className="purple">I&apos;M</strong>
             </h1>
             <Aboutcard />
           </Col>
