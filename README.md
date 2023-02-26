@@ -1,10 +1,11 @@
-# My Portfolio
+# My Portfolio Frontend with React.js
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/alexjcm/portfolio) [![Publish docker image (CI)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml/badge.svg?branch=main)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml)
 
 ## Prerrequisites
 
-NodeJS 14
+- NodeJS 14
+- [portfolio-ws](https://github.com/alexjcm/portfolio-ws) (Optional)
 
 ## Installation
 
@@ -52,7 +53,7 @@ docker run --rm -d -p 3000:80 --name my-portfolio alexjcm/portfolio
 Stop container:
 
 ```bash
-docker stop my-portafolio
+docker stop my-portfolio
 ```
 
 ## Conventional commits
