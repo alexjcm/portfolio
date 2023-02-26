@@ -55,7 +55,7 @@ function Contact() {
     event.preventDefault();
 
     // 02 Submit
-    await fetch('https://alexjcm.me/mailer/sendMail', {
+    await fetch('https://alexjcm.me/api/sendMail', {
       method: 'POST',
       body: JSON.stringify(bodyMsg),
       headers: {
