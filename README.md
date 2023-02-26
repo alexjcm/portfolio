@@ -47,13 +47,13 @@ docker pull alexjcm/portfolio
 Start container:
 
 ```bash
-docker run --rm -d -p 3000:80 --name my-portfolio alexjcm/portfolio
+docker run --rm -d -p 3000:80 --name portfolio alexjcm/portfolio
 ```
 
 Stop container:
 
 ```bash
-docker stop my-portfolio
+docker stop portfolio
 ```
 
 ## Conventional commits
