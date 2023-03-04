@@ -6,6 +6,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "docker-build": "docker build --rm -t portfolio-frontend .",
     "docker-run": "docker run --rm -v ${pwd}:/portfolio-frontend -p 3000:3000 --name portfolio-frontend-app portfolio-frontend",
     "docker-stop": "docker rm -f portfolio-frontend-app",
