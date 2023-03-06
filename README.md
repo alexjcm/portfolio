@@ -56,6 +56,11 @@ Stop container:
 docker stop portfolio
 ```
 
+## TODO
+
+- Review and config public/robots.txt file
+- Fix warnings when excute npm run build
+
 ## Conventional commits
 
 To view the convention used for commit messages, [click here](https://gist.github.com/alexjcm/6cc0a0a1ed96c85675a9d92706e1099d)
