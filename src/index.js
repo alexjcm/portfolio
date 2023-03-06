@@ -5,12 +5,22 @@ import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+// Opt-in to Webpack hot module replacement
+// if (module.hot) module.hot.accept();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    const NextApp = require('./App').default;
+    ReactDOM.render(<NextApp />, document.getElementById('root'));
+  });
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

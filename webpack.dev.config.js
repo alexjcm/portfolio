@@ -1,19 +1,19 @@
 const path = require('path');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js', // archivo de entrada principal
+  entry: './src/index.js',
   output: {
-    // archivo de salida
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    //publicPath: '/',
   },
   module: {
     rules: [
       {
-        // regla para procesar archivos js y jsx con babel
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -53,26 +53,26 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      // filename: './index.html',
     }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'public/manifest.json', to: 'manifest.json' }],
+    }),
+    new InterpolateHtmlPlugin(HtmlWebpackPlugin, {
+      PUBLIC_URL: 'public',
+    }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  // devServer: {
-  //   historyApiFallback: true,
-  // },
-
-  // devServer: {
-  //   contentBase: path.join(__dirname, 'dist'),
-  //   compress: true,
-  //   port: 9000
-  // }
-
-  // devServer: {
-  //   contentBase: path.resolve(__dirname, 'dist'),
-  //   open: true,
-  //   clientLogLevel: 'silent',
-  //   port: 9000,
-  // },
+  // devtool: 'inline-source-map',
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    // compress: true,
+    open: true,
+    port: 3000,
+    // historyApiFallback: true,
+  },
 };

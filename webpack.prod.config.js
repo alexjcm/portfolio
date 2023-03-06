@@ -1,17 +1,17 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-//No utilice style-loader y mini-css-extract-plugin juntos.
 module.exports = {
   mode: 'production',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.[contenthash].js',
-    //publicPath: '/',
   },
   module: {
     rules: [
@@ -56,9 +56,8 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new HTMLWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: './public/index.html',
-    //   filename: './index.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -68,6 +67,13 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'bundle.[contenthash].css',
+      //   chunkFilename: '[id].css',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'public/manifest.json', to: 'manifest.json' }],
+    }),
+    new InterpolateHtmlPlugin(HtmlWebpackPlugin, {
+      PUBLIC_URL: 'public',
     }),
   ],
   optimization: {
