@@ -42,8 +42,8 @@ jobs:
 
             Repository: *${{ github.repository }}*
 
-            *${{ github.actor }}* created commit message:
-            ${{ github.event.commits[0].message }}
+            *${{ github.actor }}* created last commit message:
+            ${{ github.event.head_commit.message }}
                
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 

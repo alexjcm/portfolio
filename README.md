@@ -58,7 +58,6 @@ docker stop portfolio
 
 ## TODO
 
-- Review and config public/robots.txt file
 - Fix warnings when excute npm run build
 
 ## Conventional commits
