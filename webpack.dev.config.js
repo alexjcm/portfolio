@@ -55,7 +55,10 @@ module.exports = {
       template: './public/index.html',
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'public/manifest.json', to: 'manifest.json' }],
+      patterns: [
+        { from: 'public/manifest.json', to: 'manifest.json' },
+        { from: 'public/favicon.ico', to: 'favicon.ico' },
+      ],
     }),
     new InterpolateHtmlPlugin(HtmlWebpackPlugin, {
       PUBLIC_URL: 'public',
