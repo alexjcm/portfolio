@@ -1,8 +1,8 @@
 const path = require('path');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -27,7 +27,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(bpm|png|jpe?g|gif|svg)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -63,10 +63,17 @@ module.exports = {
         removeComments: true,
         removeRedundantAttributes: true,
         useShortDoctype: true,
+        removeEmptyAttributes: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
       },
     }),
     new MiniCssExtractPlugin({
+      // filename: '[name].[contenthash:8].css',
+      // chunkFilename: '[name].[contenthash:8].chunk.css',
       filename: 'bundle.[contenthash].css',
+      chunkFilename: 'bundle.[contenthash].chunk.css',
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -74,15 +81,24 @@ module.exports = {
         { from: 'public/favicon.ico', to: 'favicon.ico' },
       ],
     }),
-    new InterpolateHtmlPlugin(HtmlWebpackPlugin, {
-      PUBLIC_URL: 'public',
-    }),
+    new CaseSensitivePathsPlugin(),
   ],
   optimization: {
+    minimize: true,
     minimizer: [
       new CssMinimizerPlugin(),
       new TerserPlugin({
         parallel: true,
+        terserOptions: {
+          output: {
+            comments: false,
+            // Turned on because emoji and regex is not minified properly using default
+            ascii_only: true,
+          },
+          mangle: {
+            safari10: true,
+          },
+        },
       }),
     ],
   },
