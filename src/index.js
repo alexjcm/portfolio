@@ -1,24 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-// Opt-in to Webpack hot module replacement
-// if (module.hot) module.hot.accept();
+const rootContainer = document.getElementById('root');
+const root = createRoot(rootContainer); // createRoot(rootContainer!) if you use TypeScript
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
+// Opt-in to Webpack hot module replacement
+// if (module.hot) module.hot.accept();
 if (module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('./App').default;
-    ReactDOM.render(<NextApp />, document.getElementById('root'));
+    root.render(<NextApp />);
   });
 }
 
