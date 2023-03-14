@@ -29,8 +29,6 @@ function App() {
         <GlobalStyles />
         <CustomParticles />
         <Router>
-          {/* <Preloader load={load} /> */}
-          {/* <div className="App" id={load ? 'no-scroll' : 'scroll'}> */}
           <div className="App" id="scroll">
             <Navbar theme={theme} toggleTheme={themeToggler} />
             <ScrollToTop />

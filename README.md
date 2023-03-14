@@ -68,7 +68,7 @@ docker stop portfolio
 ## TODO
 
 - Fix warnings when excute npm run build
-- Test cases written with karma and jasmine
+- Test cases written with Jest and React Testing Library
 
 ## Conventional commits
 

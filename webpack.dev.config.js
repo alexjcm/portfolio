@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'development',
@@ -62,11 +63,12 @@ module.exports = {
     }),
     new CaseSensitivePathsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin(),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  // devtool: 'inline-source-map',
+  devtool: 'inline-source-map',
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
