@@ -18,15 +18,8 @@ import Navbar from './components/utils/Navbar';
 import ScrollToTop from './components/utils/ScrollToTop';
 
 function App() {
-  // const [load, upadateLoad] = useState(true);
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     upadateLoad(false);
-  //   }, 1000);
-  // }, []);
 
   if (!mountedComponent) return <div />;
 
@@ -36,8 +29,6 @@ function App() {
         <GlobalStyles />
         <CustomParticles />
         <Router>
-          {/* <Preloader load={load} /> */}
-          {/* <div className="App" id={load ? 'no-scroll' : 'scroll'}> */}
           <div className="App" id="scroll">
             <Navbar theme={theme} toggleTheme={themeToggler} />
             <ScrollToTop />

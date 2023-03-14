@@ -1,6 +1,15 @@
 # My Portfolio Frontend with React.js
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/alexjcm/portfolio) [![Publish docker image (CI)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml/badge.svg?branch=main)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml)
+[![Publish docker image (CI)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml/badge.svg?branch=main)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml) [![Code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/alexjcm/portfolio) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) 
+
+## Features
+
+- Production ready Dockerfile
+- Linting with Eslint 8
+- Format code with Prettier
+- ES6+ features with babel (including es6 import/export feature).
+- Transpile with Babel 7
+- Bundle with Webpack 5
 
 ## Prerrequisites
 
@@ -59,6 +68,7 @@ docker stop portfolio
 ## TODO
 
 - Fix warnings when excute npm run build
+- Test cases written with Jest and React Testing Library
 
 ## Conventional commits
 
