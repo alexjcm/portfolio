@@ -1,6 +1,6 @@
 {
   "name": "porftolio-frontend",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Portfolio with React 17 and webpack",
   "scripts": {
     "start": "webpack serve --config webpack.dev.config.js",

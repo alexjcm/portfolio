@@ -79,7 +79,11 @@ module.exports = {
       patterns: [
         { from: 'public/manifest.json', to: 'manifest.json' },
         { from: 'public/favicon.ico', to: 'favicon.ico' },
+        { from: 'src/assets/projects', to: 'assets/projects' },
       ],
+    }),
+    new webpack.DefinePlugin({
+      API_URL: JSON.stringify('https://alexjcm.me/api'),
     }),
     new CaseSensitivePathsPlugin(),
   ],
