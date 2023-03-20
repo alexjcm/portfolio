@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'development',
@@ -59,11 +59,15 @@ module.exports = {
       patterns: [
         { from: 'public/manifest.json', to: 'manifest.json' },
         { from: 'public/favicon.ico', to: 'favicon.ico' },
+        { from: 'src/assets/projects', to: 'assets/projects' }, // IMP
       ],
+    }),
+    new webpack.DefinePlugin({
+      API_URL: JSON.stringify('http://localhost:5000'),
     }),
     new CaseSensitivePathsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin(),
+    //new BundleAnalyzerPlugin(),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],

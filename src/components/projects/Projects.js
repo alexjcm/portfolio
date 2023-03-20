@@ -1,61 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
-import covidTracker from '../../assets/projects/covid-tracker.png';
-import cryptoTracker from '../../assets/projects/crypto-tracker.png';
-import markdownEditor from '../../assets/projects/markdown-editor.png';
-import mlApp from '../../assets/projects/ml-app.png';
-import projectSample from '../../assets/projects/sample-min.png';
 import CardProject from './CardProject';
 import './styles.css';
 
 function Projects() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API_URL}/projects`)
+      .then((response) => response.json())
+      .then((data) => setProjects(data))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <Container fluid className="project-section">
       <h1 className="project-heading">
         My Recent <strong className="purple">Works </strong>
       </h1>
       <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>
-        <Col md={4} className="project-card">
-          <CardProject
-            imgPath={markdownEditor}
-            title="Markdown Editor"
-            description="A lightweight markup language editor known as markdow that includes features such as code support, image support, mathematical symbols and formulas, and emoji chat."
-            link="https://alexjcm.github.io/react-markdown-editor/"
-          />
-        </Col>
-        <Col md={4} className="project-card">
-          <CardProject
-            imgPath={covidTracker}
-            title="Covid-19 Global Cases Tracker"
-            description="This web application includes features such as an interactive map, cases by country, cacunas deployed by country and new cases in the world."
-            link="https://alexjcm.github.io/react-covid-tracker/"
-          />
-        </Col>
-        <Col md={4} className="project-card">
-          <CardProject
-            imgPath={cryptoTracker}
-            title="Cryptocurrency Tracker"
-            description="Cryptocurrency price tracker with React.js and CoinGecko API V3 to retrieve real-time and historical data for different cryptocurrencies."
-            link="https://alexjcm.github.io/cryptocurrency-tracker/"
-          />
-        </Col>
-        <Col md={4} className="project-card">
-          <CardProject
-            imgPath={projectSample}
-            title="Electronic Certification Module"
-            description="Web solution that automates the academic certification process for students of the Systems Engineering/Computation career at the Universidad Nacional de Loja."
-            link="https://computacion.unl.edu.ec/bonita/"
-          />
-        </Col>
-        <Col md={4} className="project-card">
-          <CardProject
-            imgPath={mlApp}
-            title="Image classification of skin cancer"
-            description="Web application for image classification of skin cancer through the use of supervised machine learning and a kaggle datasets."
-            link="https://ml-onocology.herokuapp.com/"
-          />
-        </Col>
+        {projects.map((project) => (
+          <Col md={4} className="project-card" key={project.id}>
+            <CardProject
+              imgPath={'assets/projects/' + project.imageProjectLink}
+              title={project.name}
+              description={project.description}
+              link={project.projectLink}
+            />
+          </Col>
+        ))}
       </Row>
     </Container>
   );

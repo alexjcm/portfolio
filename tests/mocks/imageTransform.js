@@ -4,15 +4,15 @@ const path = require('path');
 // http://facebook.github.io/jest/docs/en/webpack.html
 
 module.exports = {
-    process(src, filename) {
-        const assetFilename = JSON.stringify(path.basename(filename));
+  process(src, filename) {
+    const assetFilename = JSON.stringify(path.basename(filename));
 
-        if (filename.match(/\.svg$/)) {
-            const baseName = path.basename(filename);
-            const moduleName = `svg-${baseName}`;
-            return { code: `module.exports = '${moduleName}';` };
-        }
+    if (filename.match(/\.svg$/)) {
+      const baseName = path.basename(filename);
+      const moduleName = `svg-${baseName}`;
+      return { code: `module.exports = '${moduleName}';` };
+    }
 
-        return { code: `module.exports = ${assetFilename};` };
-    },
+    return { code: `module.exports = ${assetFilename};` };
+  },
 };
