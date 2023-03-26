@@ -56,7 +56,7 @@ docker pull alexjcm/portfolio
 Start container:
 
 ```bash
-docker run --rm -d -p 3000:80 --name portfolio alexjcm/portfolio
+docker run --restart unless-stopped --rm -d -p 3000:80 --name portfolio alexjcm/portfolio
 ```
 
 Stop container:

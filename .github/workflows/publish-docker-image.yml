@@ -41,9 +41,6 @@ jobs:
             *DOCKER IMAGE PUSH SUCCESSFUL*
 
             Repository: *${{ github.repository }}*
-
-            *${{ github.actor }}* created last commit message:
-            ${{ github.event.head_commit.message }}
                
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
