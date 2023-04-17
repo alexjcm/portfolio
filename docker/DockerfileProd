@@ -1,31 +1,50 @@
-## Builder Stage
-FROM node:14-alpine as build-stage
-
+## 1. Dependencies stage. Install dependencies only when needed
+FROM node:18-alpine AS deps
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
+COPY package.json package-lock.json ./
+RUN \
+  if [ -f package-lock.json ]; then npm ci; \
+  else echo "Lockfile not found." && exit 1; \
+  fi
+# Or
+#RUN npm install --production
 
-COPY package*.json /app
 
-RUN npm install
-
-# Copy project files from the current directory to the working directory inside the container
-COPY . /app
-
-# Build the application for production
+## 2. Builder stage. Rebuild the source code only when needed
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+# Use the corresponding env file for each environment.
+COPY .env.production .env.production
 RUN npm run build
 
 
-## Runner Stage
-# Uses a lighter base image to deploy the application
-FROM nginx:alpine
+## 3. Runner stage. Production image, copy all the files and run next
+FROM node:18-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV production
 
-# Copy the React application build files from the above image to the Nginx working directory
-COPY --from=build-stage /app/build /usr/share/nginx/html
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
-# Copy Nginx configuration to container
-RUN rm /etc/nginx/conf.d/default.conf
-COPY --from=build-stage /app/docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/public ./public
 
-EXPOSE 80
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Starts Nginx in the foreground when the container starts up
-CMD ["nginx", "-g", "daemon off;"]
+USER nextjs
+EXPOSE 3000
+ENV PORT 3000
+
+CMD ["node", "server.js"]
+
+# The Docker build has three stages:
+# deps: we install the node dependencies; this has the advantage to speed because this stage will run only if a Node dependency has been added, updated, or removed; otherwise, it will reuse the cached Node modules.
+# builder: We copy the Node modules folder from the previous stage (deps); copy all the project folders and files, and build the application for the production
+# runner: we define a user and a group, set the user as the owner of all the files; this prevents to running the image with the root user. We copy the build output folder, expose the port 3000 and start the Node server.

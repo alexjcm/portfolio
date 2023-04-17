@@ -2,7 +2,7 @@ const eslintRecommended = require('@eslint/js/src/configs/eslint-recommended');
 const globals = require('globals');
 const react = require('eslint-plugin-react');
 const reactRecommended = require('eslint-plugin-react/configs/recommended');
-const prettierRecommended = require('eslint-plugin-prettier/eslint-plugin-prettier');
+//const prettierRecommended = require('eslint-plugin-prettier/eslint-plugin-prettier');
 
 //"plugin:prettier/recommended" ----> reactRecommended
 //"eslint:recommended",         ----> eslintRecommended

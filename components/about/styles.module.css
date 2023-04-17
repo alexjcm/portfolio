@@ -1,0 +1,77 @@
+/* --------- */
+/*   About   */
+/* --------- */
+.aboutSection {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  background-image: white;
+  color: white;
+}
+
+.techIcons {
+  font-size: 4.5em;
+  margin: 15px;
+  padding: 10px;
+  opacity: 0.93;
+  border: 1.7px solid var(--tech-icon-color-rgba);
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 5px;
+  display: table;
+  box-shadow: 4px 5px 4px 3px var(--tech-icon-color-box-shadow-rgba);
+  overflow: hidden;
+  transition: all 0.4s ease 0s;
+}
+
+@media (max-width: 767px) {
+  .techIcons {
+    margin: 10px;
+  }
+}
+
+.techIcons:hover {
+  transform: scale(1);
+  overflow: hidden;
+  border: 1.6px solid var(--tech-icon-color-hover-rgba);
+}
+
+.techIconImages {
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.quoteCardView {
+  border: none;
+  color: black;
+  background-color: transparent;
+}
+
+.aboutActivity {
+  list-style: none;
+  text-align: left;
+  padding-left: 1px;
+}
+
+.aboutImg {
+  padding-top: 0;
+}
+
+@media (max-width: 767px) {
+  .aboutImg {
+    padding-top: 0;
+  }
+}
+
+/******************/
+.projectHeading {
+  color: white;
+  font-size: 2.3em;
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+/*******Tech Icons******/
+.iconTechColor {
+  color: white;
+}
