@@ -8,11 +8,7 @@ import styles from '../components/home/styles.module.css';
 import Type from '../components/home/Type';
 import progressiveApp from '../public/assets/home/undraw_progressive_app.svg';
 
-import logger from '../logger/logger';
-
 export default function MainHome() {
-  logger.info("Client side logging. Logged with pino.")
-  
   return (
     <section className={styles.mainSection}>
       <Container fluid className={styles.homeSection} id="home">

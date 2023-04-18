@@ -1,3 +1,9 @@
+// This file sets a custom webpack configuration to use your Next.js app
+// with Sentry.
+// https://nextjs.org/docs/api-reference/next.config.js/introduction
+// https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
+const { withSentryConfig } = require('@sentry/nextjs');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -9,17 +15,6 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
     // see https://styled-components.com/docs/tooling#babel-plugin for more info on the options.
-    // styledComponents: true | {
-    //   // Enabled by default in development, disabled in production to reduce file size,
-    //   // setting this will override the default for all environments.
-    //   displayName?: boolean,
-    //   ssr?: boolean,
-    //   fileName?: boolean,
-    //   cssProp?: boolean,
-    //   namespace?: string,
-    //   minify?: boolean,
-    //   pure?: boolean,
-    // },
   },
 
   //To add support for Docker. Next.js can automatically create a .next/standalone folder that copies only the necessary files
@@ -32,10 +27,14 @@ const nextConfig = {
 };
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  // Analyze is done on build when env var is set
-  //ANALYZE=true npm run build
   enabled: process.env.ANALYZE === 'true',
   openAnalyzer: false,
 });
 
 module.exports = withBundleAnalyzer(nextConfig);
+
+module.exports = withSentryConfig(
+  module.exports,
+  { silent: true },
+  { hideSourcemaps: true },
+);

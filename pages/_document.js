@@ -8,10 +8,8 @@ export default class MyDocument extends Document {
     const originalRenderPage = ctx.renderPage;
 
     try {
-      // Run the React rendering logic synchronously
-      ctx.renderPage = () =>
+        ctx.renderPage = () =>
         originalRenderPage({
-          // Useful for wrapping the whole react tree
           enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
         });
 

@@ -4,6 +4,8 @@ import { Button, Form } from 'react-bootstrap';
 import styles from '../components/contact/Contact.module.css';
 import { validateEmail } from '../components/utils/util';
 
+import logger from '../logger/logger'
+
 export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -29,7 +31,6 @@ export default function Contact() {
   };
 
   const resetForm = () => {
-    console.log('Clean contact form');
     handleNameChange('');
 
     setName('');
@@ -64,7 +65,7 @@ export default function Contact() {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log('response: ', response);
+        logger.info(response, 'response');
         if (response.status === 'success') {
           alert('Message sent :)');
           resetForm();
@@ -73,7 +74,7 @@ export default function Contact() {
         }
       })
       .catch((error) => {
-        console.log(error);
+        logger.error(error);
       });
   };
 

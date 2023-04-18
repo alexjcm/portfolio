@@ -8,13 +8,12 @@ import logger from '../logger/logger'
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
-  logger.info("Load projects...'. Logged with pino.")
   
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`)
       .then((response) => response.json())
       .then((data) => setProjects(data))
-      .catch((error) => console.error(error));
+      .catch((error) => logger.error(error));
   }, []);
 
   return (
