@@ -7,11 +7,12 @@ export default function AboutCard() {
   return (
     <Card className={styles.quoteCardView}>
       <Card.Body>
-        <blockquote className="blockquote mb-0">
+        <blockquote className={`blockquote mb-0 ${styles.aboutCardTextSize}`}>
           <p style={{ textAlign: 'justify' }}>
             Hi everyone, I am <span className={styles.purple}>Alex John Chamba</span>, I am from{' '}
             <span className={styles.purple}> Loja, Ecuador.</span>
-            <br />I am a Software Developer and an enthusiast of new <br />
+            <br/><br/>
+            I am a Software Developer and an enthusiast of new
             technologies related to the software industry.
           </p>
         </blockquote>

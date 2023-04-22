@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import GitHubCalendar from 'react-github-calendar';
-import ReactTooltip from 'react-tooltip';
+import { Tooltip } from 'react-tooltip'
 
 import styles from './styles.module.css';
 
@@ -17,9 +17,15 @@ export default function Github() {
         blockMargin={5}
         // theme={colourTheme}
         fontSize={16}
+        renderBlock={(block, activity) =>
+          React.cloneElement(block, {
+            'data-tooltip-id': 'my-tooltip',
+            'data-tooltip-html': `${activity.count} contributions on ${activity.date}`,
+          })
+        }
       >
-        <ReactTooltip html />
       </GitHubCalendar>
-    </Row>
+      <Tooltip id="my-tooltip" />
+    </Row >
   );
 }

@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/global.css';
+import 'react-tooltip/dist/react-tooltip.css'
+
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 

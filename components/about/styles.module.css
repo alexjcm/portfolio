@@ -9,6 +9,10 @@
   color: white;
 }
 
+.aboutCardTextSize {
+  font-size: 1.4em;
+}
+
 .techIcons {
   font-size: 4.5em;
   margin: 15px;

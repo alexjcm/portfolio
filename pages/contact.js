@@ -3,10 +3,13 @@ import { Button, Form } from 'react-bootstrap';
 
 import styles from '../components/contact/Contact.module.css';
 import { validateEmail } from '../components/utils/util';
+import AlertMessage from '../components/contact/AlertMessage';
+
 
 import logger from '../logger/logger'
 
 export default function Contact() {
+  const [buttonText, setButtonText] = useState('Submit');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -14,6 +17,13 @@ export default function Contact() {
   const [emailIsActive, setEmailIsActive] = useState(false);
   const [messageIsActive, setMessageIsActive] = useState(false);
   const [validated, setValidated] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [paramsAlert, setParamsAlert] = useState({
+    variant: '',
+    dismissible: '',
+    message: ''
+  });
+
 
   const handleNameChange = (name) => {
     setName(name);
@@ -30,12 +40,20 @@ export default function Contact() {
     message ? setMessageIsActive(true) : setMessageIsActive(false);
   };
 
-  const resetForm = () => {
-    handleNameChange('');
+  const configParamsAlert = (variant, message) => {
+    setParamsAlert({
+      ...paramsAlert,
+      variant: variant,
+      dismissible: true,
+      message: message
+    });
 
-    setName('');
-    setEmail('');
-    setMessage('');
+    setShowAlert(true);
+  }
+
+  const resetForm = (event) => {
+    event.target.reset();
+    setValidated(false);
   };
 
   const handleSubmit = async (event) => {
@@ -55,8 +73,10 @@ export default function Contact() {
 
     event.preventDefault();
 
+    setButtonText('Submitting...');
+
     // 02 Submit
-    await fetch(`${process.env.API_URL}/mailer/sendMail`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/mailer/sendMail`, {
       method: 'POST',
       body: JSON.stringify(bodyMsg),
       headers: {
@@ -67,15 +87,17 @@ export default function Contact() {
       .then((response) => {
         logger.info(response, 'response');
         if (response.status === 'success') {
-          alert('Message sent :)');
-          resetForm();
+          configParamsAlert('success', 'Message sent :)');
+          resetForm(event);
         } else if (response.status === 'fail') {
-          alert('Message failed to send!');
+          configParamsAlert('danger', 'Message failed to send :(');
         }
       })
       .catch((error) => {
         logger.error(error);
-      });
+      }).finally(() => {
+        setButtonText('Submit');
+      })
   };
 
   return (
@@ -124,8 +146,11 @@ export default function Contact() {
           variant="info"
           type="submit"
         >
-          Submit
+          {buttonText}
         </Button>
+        {showAlert && (
+          <AlertMessage variant={paramsAlert.variant} message={paramsAlert.message} dismissible={paramsAlert.dismissible} onClose={() => setShowAlert(false)} />
+        )}
       </Form>
     </div>
   );

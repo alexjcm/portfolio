@@ -32,7 +32,7 @@ export default function SecondaryHome() {
           </Col>
           <Col md={5} className={styles.myAvtar}>
             <Tilt reset={false} tiltReverse={true}>
-              <Image src={versionControl} className={styles.imgFluid} alt="avatar" priority />
+              <Image src={versionControl} className={styles.imgSecondFluid} alt="avatar" priority />
             </Tilt>
           </Col>
         </Row>
@@ -42,7 +42,7 @@ export default function SecondaryHome() {
             <br />
             <br />
             <h1>FIND ME ON</h1>
-            <p>
+            <p className={styles.homeAboutSocialTextSize}>
               Feel free to <span className={styles.purple}>connect </span>with me
             </p>
             <ul className={styles.homeAboutSocialLinks}>

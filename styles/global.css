@@ -164,3 +164,14 @@ html {
     display: none;
   }
 }
+
+/************
+  * Navbar *
+  ************/
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(242, 245, 248);
+}
+
+.navbar-light .navbar-nav .nav-item > .active  {
+  color: rgb(124, 171, 218);
+}

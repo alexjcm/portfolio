@@ -5,6 +5,7 @@
 ## Features
 
 - Production ready Dockerfile
+- Implemented [sentry](https://sentry.io) error tracking and monitoring
 - Linting with Eslint 8
 - Format code with Prettier
 - ES6+ features with babel (including es6 import/export feature)
