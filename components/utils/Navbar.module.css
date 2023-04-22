@@ -1,0 +1,140 @@
+/* --------- */
+/* Navbar Section  */
+/* --------- */
+.sticky {
+  background-color: var(--dark-color);
+  transition: all 0.3s ease-out 0s;
+  box-shadow: 0px 10px 10px 0px var(--dark-color-rgba);
+  backdrop-filter: blur(15px);
+}
+
+.navbar {
+  position: fixed;
+  transition: all 0.3s ease-out 0s;
+  padding: 0.3rem 2rem;
+  font-size: 1.2rem;
+}
+
+.lightNavLink {
+  color: var(--light-secondary-color-rgb);
+}
+.myLightNavLink {
+  color: white;
+}
+.myLightNavLink2 {
+  color: white;
+}
+
+
+.navbarToggler {
+  padding: 0.25rem 1.5rem;
+  position: relative;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbarToggler span {
+  display: block;
+  background-color: var(--main-color);
+  height: 4px;
+  width: 27px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transform: rotate(0deg);
+  left: 0;
+  opacity: 1;
+}
+
+.navbarToggler:focus,
+.navbarToggler:active {
+  outline: 0;
+}
+
+.navbarToggler span:nth-child(1),
+.navbarToggler span:nth-child(3) {
+  transition: transform 0.35s ease-in-out;
+  transition: transform 0.35s ease-in-out;
+}
+
+.navbarToggler:not(.collapsed) span:nth-child(1) {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  transform: rotate(135deg);
+  opacity: 0.9;
+}
+
+.navbarToggler:not(.collapsed) span:nth-child(2) {
+  height: 12px;
+  visibility: hidden;
+  background-color: transparent;
+}
+
+.navbarToggler:not(.collapsed) span:nth-child(3) {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  transform: rotate(-135deg);
+  opacity: 0.9;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    background-color: var(--dark-color);
+  }
+  .navbarNav .navItem a::after {
+    display: none;
+  }
+}
+
+.navbarBrand {
+  color: var(--light-secondary-color-rgb);
+}
+
+.logo {
+  height: 2.3em;
+  width: 2.3em;
+  border-radius: 50%;
+}
+
+.navLink {
+  padding: 0.8rem 1rem;
+}
+
+@media (max-width: 767px) {
+  .navLink {
+    padding: 0.7rem 1rem;
+  }
+}
+
+.navbarNav .navItem {
+  position: relative;
+  margin-left: 20px;
+}
+
+.navbarNav .navItem a {
+  font-weight: 400;
+  transition: all 0.3s ease-out 0s;
+  position: relative;
+  z-index: 1;
+}
+
+.navbarNav .navItem a::after {
+  content: '';
+  position: relative;
+  display: block;
+  height: 5px;
+  width: 0;
+  border-radius: 16px;
+  background: var(--main-color);
+  bottom: 1px;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease-out 0s;
+}
+
+.navbarNav .navItem a:hover::after {
+  width: 100%;
+}

@@ -1,19 +1,19 @@
-# My Portfolio Frontend with React.js
+# My Portfolio Frontend with React.js and Next.js
 
 [![Publish docker image (CI)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml/badge.svg?branch=main)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml) [![Code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/alexjcm/portfolio) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE)
 
 ## Features
 
 - Production ready Dockerfile
+- Implemented [sentry](https://sentry.io) error tracking and monitoring
 - Linting with Eslint 8
 - Format code with Prettier
 - ES6+ features with babel (including es6 import/export feature)
-- Transpile with Babel 7
-- Bundle with Webpack 5
+- Logging with [Pino](https://www.npmjs.com/package/pino)
 
 ## Prerrequisites
 
-- NodeJS 14
+- NodeJs 18
 - [portfolio-ws](https://github.com/alexjcm/portfolio-ws)
 
 ## Installation
@@ -24,27 +24,35 @@ Clone or download this repository:
 git clone https://github.com/alexjcm/portfolio.git
 ```
 
-### `npm install`
+```bash
+npm install
+```
 
-## Available Scripts
+Run the development server:
 
-In the project directory, you can run:
+```bash
+npm run dev
+```
 
-### `npm start`
-
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run build`
+Generate an optimized version of your application for production.
+Build the production application in the .next folder.
 
-Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run build
+```
+
+```bash
+npm start
+```
 
 ## Deployment with docker
 
 Build image:
 
 ```bash
-docker build -t alexjcm/portfolio -f docker/DockerfilePro .
+docker build -t alexjcm/portfolio -f docker/DockerfileProd .
 ```
 
 Or
@@ -56,7 +64,7 @@ docker pull alexjcm/portfolio
 Start container:
 
 ```bash
-docker run --restart unless-stopped --rm -d -p 3000:80 --name portfolio alexjcm/portfolio
+docker run --restart unless-stopped -d -p 3000:3000 --name portfolio alexjcm/portfolio
 ```
 
 Stop container:
@@ -67,7 +75,6 @@ docker stop portfolio
 
 ## TODO
 
-- Fix warnings when excute npm run build
 - Test cases written with Jest and React Testing Library
 
 ## Conventional commits

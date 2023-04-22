@@ -1,8 +1,3 @@
-/*
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
- */
-
 module.exports = {
   collectCoverage: false,
   // An array of glob patterns indicating a set of files for which coverage information should be collected
