@@ -4,10 +4,7 @@ FROM node:18-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN \
-  if [ -f package-lock.json ]; then npm ci; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
+RUN npm ci
 # Or
 #RUN npm install --production
 
@@ -22,11 +19,12 @@ COPY .env.production .env.production
 RUN npm run build
 
 
-## 3. Runner stage. Production image, copy all the files and run next
+## 3. Runner stage. Copy all the files and run next
 FROM node:18-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV production
 
+# Define a user and a group, set the user as the owner of all the files; this prevents to running the image with the root user
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
@@ -42,9 +40,5 @@ USER nextjs
 EXPOSE 3000
 ENV PORT 3000
 
+# Start the Node server
 CMD ["node", "server.js"]
-
-# The Docker build has three stages:
-# deps: we install the node dependencies; this has the advantage to speed because this stage will run only if a Node dependency has been added, updated, or removed; otherwise, it will reuse the cached Node modules.
-# builder: We copy the Node modules folder from the previous stage (deps); copy all the project folders and files, and build the application for the production
-# runner: we define a user and a group, set the user as the owner of all the files; this prevents to running the image with the root user. We copy the build output folder, expose the port 3000 and start the Node server.

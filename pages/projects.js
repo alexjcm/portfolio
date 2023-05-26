@@ -19,7 +19,7 @@ export default function Projects() {
   return (
     <Container fluid className={styles.projectSection}>
       <h1 className={styles.projectHeading}>
-        My Recent <strong className={styles.purple}>Works </strong>
+        My recent <strong className={styles.purple}>works </strong>
       </h1>
       <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>
         {projects.map((project) => (

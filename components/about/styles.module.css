@@ -1,6 +1,7 @@
-/* --------- */
-/*   About   */
-/* --------- */
+.purple {
+  color: var(--main-color);
+}
+
 .aboutSection {
   position: relative;
   padding-top: 100px;
@@ -11,6 +12,10 @@
 
 .aboutCardTextSize {
   font-size: 1.4em;
+}
+
+.cardBodyText{
+  padding-left: 0px;
 }
 
 .techIcons {

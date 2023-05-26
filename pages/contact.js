@@ -5,7 +5,6 @@ import styles from '../components/contact/Contact.module.css';
 import { validateEmail } from '../components/utils/util';
 import AlertMessage from '../components/contact/AlertMessage';
 
-
 import logger from '../logger/logger'
 
 export default function Contact() {
@@ -106,9 +105,12 @@ export default function Contact() {
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="inputName">
           <div className={styles.floatLabel}>
-            <Form.Control type="text" onChange={(e) => handleNameChange(e.target.value)} required />
+            <Form.Control type="text"
+              onChange={(e) => handleNameChange(e.target.value)}
+              required
+              aria-label="Your name" />
             <label htmlFor="inputName" className={nameIsActive ? 'Active' : ''}>
-              Name
+              Your name
             </label>
             <Form.Control.Feedback type="invalid">Please enter a name.</Form.Control.Feedback>
           </div>
@@ -119,6 +121,7 @@ export default function Contact() {
               required
               type="email"
               onChange={(e) => handleEmailChange(e.target.value)}
+              aria-label="Your email"
             />
             <label htmlFor="inputEmail" className={emailIsActive ? 'Active' : ''}>
               Email
@@ -134,6 +137,7 @@ export default function Contact() {
               as="textarea"
               onChange={(e) => handleMessageChange(e.target.value)}
               rows={4}
+              aria-label="Your message"
             />
             <label htmlFor="inputMessage" className={messageIsActive ? 'Active' : ''}>
               Message
@@ -145,6 +149,7 @@ export default function Contact() {
           disabled={name && email && validateEmail(email) && message ? false : true}
           variant="info"
           type="submit"
+          aria-label="Submit"
         >
           {buttonText}
         </Button>

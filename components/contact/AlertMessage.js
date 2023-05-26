@@ -1,4 +1,3 @@
-import React from 'react';
 import Alert from 'react-bootstrap/Alert';
 
 export default function AlertMessage(props) {
@@ -8,6 +7,5 @@ export default function AlertMessage(props) {
         <Alert variant={variant} onClose={onClose} dismissible={dismissible}>
             {message}
         </Alert>
-
     );
 }
