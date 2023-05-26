@@ -25,11 +25,10 @@ export default function About() {
               style={{
                 fontSize: '2.1em',
                 paddingTop: '20px',
-                paddingBottom: '20px',
-                paddingLeft: '20px',
+                paddingBottom: '20px'
               }}
             >
-              Who <strong className={styles.purple}>I&apos;M</strong>
+              Who <strong className={styles.purple}>I&apos;M ?</strong>
             </h1>
             <Aboutcard />
           </Col>

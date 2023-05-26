@@ -37,6 +37,7 @@ export default function NavBar(props) {
           as={Link}
           href="/"
           onClick={() => updateExpanded(false)}
+          aria-label='Link to home'
         >
           <Image
             src={props.theme === 'light' ? logoLight : logoDark}
@@ -63,6 +64,7 @@ export default function NavBar(props) {
                 as={Link}
                 href="/"
                 onClick={() => updateExpanded(false)}
+                aria-label='Link to home'
               >
                 Home
               </Nav.Link>
@@ -73,6 +75,7 @@ export default function NavBar(props) {
                 as={Link}
                 href="/about"
                 onClick={() => updateExpanded(false)}
+                aria-label='Link to about'
               >
                 About
               </Nav.Link>
@@ -83,6 +86,7 @@ export default function NavBar(props) {
                 as={Link}
                 href="/projects"
                 onClick={() => updateExpanded(false)}
+                aria-label='Link to projects'
               >
                 Projects
               </Nav.Link>
@@ -93,6 +97,7 @@ export default function NavBar(props) {
                 as={Link}
                 href="/contact"
                 onClick={() => updateExpanded(false)}
+                aria-label='Link to contact'
               >
                 Contact
               </Nav.Link>

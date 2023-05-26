@@ -1,6 +1,6 @@
 .projectHeading {
   text-align: center;
-  color: black;
+  color: white;
   font-size: 2.3em;
   font-weight: 500;
   padding-top: 10px;
@@ -19,12 +19,18 @@
 
 .projectCardView {
   box-shadow: 0 4px 5px 3px rgba(23, 103, 105, 0.459);
-  color: black;
+  color: white;
   background-color: transparent;
   opacity: 0.9;
   transition: all 0.4s ease 0s;
   height: 100%;
 }
+
+.projectCardTitle {
+  font-weight: 500;
+  font-size: 1.4em;
+}
+
 .projectCardView:hover {
   transform: scale(1.02);
   overflow: hidden;

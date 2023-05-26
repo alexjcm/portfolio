@@ -22,9 +22,7 @@ export default function MainHome() {
                 I&apos;M
                 <strong className={styles.mainName}> ALEX JOHN CHAMBA</strong>
               </h1>
-              <div style={{ padding: 40, textAlign: 'left' }}>
                 <Type />
-              </div>
             </Col>
             <Col md={4} style={{ paddingTop: '80px' }}>
               <Image src={progressiveApp} className={styles.imgFluid} alt="progressiveApp" priority />

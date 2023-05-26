@@ -1,8 +1,30 @@
 .contactSection {
   position: relative;
-  padding: 150px 300px 150px 300px;
+  /* padding: 150px 300px 150px 300px; */
   color: white;
 }
+
+/* mobile screens*/
+@media (max-width: 767px) {
+  .contactSection {
+    padding: 150px 90px 100px 70px;
+  }  
+}
+
+/* tablet screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contactSection {
+    padding: 150px 200px 120px 100px;
+  } 
+}
+
+/* desktop screens */
+@media (min-width: 1024px) {
+  .contactSection {
+    padding: 150px 500px 150px 300px;
+  } 
+}
+
 
 .contactInfo {
   padding-bottom: 10px;

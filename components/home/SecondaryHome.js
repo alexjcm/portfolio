@@ -25,12 +25,12 @@ export default function SecondaryHome() {
               </i>
               Among my favorite frameworks are
               <i>
-                <b className={styles.purple}> Spring Boot and Node.js. </b>
+                <b className={styles.purple}> Spring Boot, Express.js and Next.js. </b>
               </i>
-              My field of interest is building web-based software solutions.
+              My field of interest is the creation of web-based software solutions using the latest technology.
             </p>
           </Col>
-          <Col md={5} className={styles.myAvtar}>
+          <Col md={5} className={styles.myAvatar}>
             <Tilt reset={false} tiltReverse={true}>
               <Image src={versionControl} className={styles.imgSecondFluid} alt="avatar" priority />
             </Tilt>
@@ -52,6 +52,7 @@ export default function SecondaryHome() {
                   target="_blank"
                   rel="noreferrer"
                   className={`${styles.iconColour} ${styles.homeSocialIcons}`}
+                  aria-label='Link to github'
                 >
                   <AiFillGithub />
                 </a>
@@ -62,6 +63,7 @@ export default function SecondaryHome() {
                   target="_blank"
                   rel="noreferrer"
                   className={`${styles.iconColour} ${styles.homeSocialIcons}`}
+                  aria-label='Link to linkedin'
                 >
                   <FaLinkedinIn />
                 </a>
@@ -72,6 +74,7 @@ export default function SecondaryHome() {
                   target="_blank"
                   rel="noreferrer"
                   className={`${styles.iconColour} ${styles.homeSocialIcons}`}
+                  aria-label='Link to twitter'
                 >
                   <AiOutlineTwitter />
                 </a>

@@ -21,12 +21,16 @@ export default function Footer() {
         <Col md="4" className={styles.footerBody}>
           <ul className={styles.footerIcons}>
             <li className={styles.socialIcons}>
-              <a href="https://github.com/alexjcm" style={{ color: 'white' }}>
+              <a href="https://github.com/alexjcm"
+                style={{ color: 'white' }}
+                aria-label="Link to github">
                 <AiFillGithub />
               </a>
             </li>
             <li className={styles.socialIcons}>
-              <a href="https://twitter.com/alexjhcm" style={{ color: 'white' }}>
+              <a href="https://twitter.com/alexjhcm"
+                style={{ color: 'white' }}
+                aria-label="Link to twitter">
                 <AiOutlineTwitter />
               </a>
             </li>
@@ -34,6 +38,7 @@ export default function Footer() {
               <a
                 href="https://www.linkedin.com/in/alex-john-chamba-macas/"
                 style={{ color: 'white' }}
+                aria-label="Link to linkedin"
               >
                 <FaLinkedinIn />
               </a>
