@@ -10,10 +10,11 @@
 - Format code with Prettier
 - ES6+ features with babel (including es6 import/export feature)
 - Logging with [Pino](https://www.npmjs.com/package/pino)
+- Traslate with [next-i18next](https://github.com/i18next/next-i18next#readme)
 
 ## Prerrequisites
 
-- NodeJs 18
+- NodeJs 18.18
 - [portfolio-ws](https://github.com/alexjcm/portfolio-ws)
 
 ## Installation
