@@ -1,0 +1,11 @@
+{
+    "navbar": {
+      "about": "Acerca",
+      "home": "Inicio",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    },
+    "footer": {
+      "createdBy": "Diseñado y desarrollado por Alex John"
+  }
+}

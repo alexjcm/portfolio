@@ -1,21 +1,26 @@
-import React, { useCallback } from 'react';
-import Particles from 'react-particles';
-
+import React, { useEffect, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadFull } from 'tsparticles';
 
-export default function CustomParticles() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
+const CustomParticles = () => {
+  const [ init, setInit ] = useState(false);
+
+  // this should be run only once per application lifetime
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+        await loadFull(engine);
+    }).then(() => {
+        setInit(true);
+    });
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
-  }, []);
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
 
   return (
-    <Particles
+    init && <Particles
       id="tsparticles"
-      init={particlesInit}
       loaded={particlesLoaded}
       options={{
         background: {
@@ -149,3 +154,5 @@ export default function CustomParticles() {
     />
   );
 }
+
+export default CustomParticles;

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 import Aboutcard from '../components/about/AboutCard';
 import Github from '../components/about/Github';
@@ -8,7 +10,9 @@ import Techstack from '../components/about/Techstack';
 import Toolstack from '../components/about/Toolstack';
 import styles from '../components/about/styles.module.css';
 
-export default function About() {
+function About() {
+  const { t } = useTranslation('about');
+
   return (
     <Container fluid className={styles.aboutSection}>
       <Container>
@@ -28,7 +32,7 @@ export default function About() {
                 paddingBottom: '20px'
               }}
             >
-              Who <strong className={styles.purple}>I&apos;M ?</strong>
+              {t('whoQ')} <strong className={styles.purple}>{t('iamQ')}</strong>
             </h1>
             <Aboutcard />
           </Col>
@@ -38,13 +42,13 @@ export default function About() {
         </Row>
         <Row style={{ justifyContent: 'center', padding: '10px' }}>
           <h1 className={styles.projectHeading}>
-            <strong className={styles.purple}>Skills</strong>
+            <strong className={styles.purple}>{t('skills')}</strong>
           </h1>
         </Row>
         <Techstack />
-        <h1 className={styles.projectHeading}>
-          <strong className={styles.purple}>Tools</strong> I use
-        </h1>
+          <h1 className={styles.toolsTitle}>
+            <strong className={styles.purple}>{t('tools')}</strong>&nbsp;{t('iUse')}
+          </h1>
         <Toolstack />
         <Github />
         <br />
@@ -52,3 +56,14 @@ export default function About() {
     </Container>
   );
 }
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en-US', [
+      'common',
+      'about',
+    ])),
+  },
+});
+
+export default About;

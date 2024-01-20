@@ -1,8 +1,9 @@
 // This file sets a custom webpack configuration to use your Next.js app
 // with Sentry.
-// https://nextjs.org/docs/api-reference/next.config.js/introduction
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 const { withSentryConfig } = require('@sentry/nextjs');
+
+const { i18n } = require('./next-i18next.config')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,12 +21,7 @@ const nextConfig = {
   // does not copy the public or .next/static folders by default, although these folders can be copied to the standalone/public
   // and standalone/.next/static folders manually, after which server.js file will serve these automatically.
 
-  i18n: {
-    // These are all the locales you want to support in your application
-    locales: ['en-US', 'es'],
-    // This is the default locale you want to be used when visiting a non-locale prefixed path e.g. `/hello`
-    defaultLocale: 'en-US',
-  },
+  i18n,
 };
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({

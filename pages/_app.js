@@ -3,6 +3,7 @@ import '../styles/global.css';
 import 'react-tooltip/dist/react-tooltip.css'
 
 import Head from 'next/head';
+import { appWithTranslation } from 'next-i18next'
 import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyles } from '../components/dark-theme/Globalstyle';
@@ -12,7 +13,7 @@ import CustomParticles from '../components/utils/CustomParticles';
 import Footer from '../components/utils/Footer';
 import Navbar from '../components/utils/Navbar';
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
@@ -25,7 +26,7 @@ export default function App({ Component, pageProps }) {
           <GlobalStyles />
           <CustomParticles />
           <div id="scroll">
-            <Navbar theme={theme} toggleTheme={themeToggler} />            
+            <Navbar theme={theme} toggleTheme={themeToggler} />
           </div>
         </>
         <Head>
@@ -38,3 +39,6 @@ export default function App({ Component, pageProps }) {
     </>
   );
 }
+
+// appWithTranslation HOC is primarily responsible for adding a I18nextProvider (https://react.i18next.com/latest/i18nextprovider)
+export default appWithTranslation(App);

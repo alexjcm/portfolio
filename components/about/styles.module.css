@@ -84,3 +84,11 @@
 .iconTechColor {
   color: white;
 }
+
+.toolsTitle {
+  color: white;
+  font-size: 2.3em;
+  font-weight: 500;
+  padding-top: 10px;
+  text-align: center;
+}
