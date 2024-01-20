@@ -2,9 +2,10 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import {
   SiApachenetbeanside,
+  SiDigitalocean,
   SiDocker,
   SiGit,
-  SiGithubactions,
+  SiIntellijidea,
   SiLinux,
   SiPostman,
   SiVisualstudiocode,
@@ -27,12 +28,12 @@ export default function Toolstack() {
       </Col>
       <Col xs={4} md={2} className={styles.techIcons}>
         <div className={styles.iconTechColor}>
-          <SiLinux />
+          <SiVisualstudiocode />
         </div>
       </Col>
       <Col xs={4} md={2} className={styles.techIcons}>
         <div className={styles.iconTechColor}>
-          <SiVisualstudiocode />
+          <SiIntellijidea />
         </div>
       </Col>
       <Col xs={4} md={2} className={styles.techIcons}>
@@ -47,7 +48,12 @@ export default function Toolstack() {
       </Col>
       <Col xs={4} md={2} className={styles.techIcons}>
         <div className={styles.iconTechColor}>
-          <SiGithubactions />
+          <SiLinux />
+        </div>
+      </Col>
+      <Col xs={4} md={2} className={styles.techIcons}>
+        <div className={styles.iconTechColor}>
+          <SiDigitalocean />
         </div>
       </Col>
     </Row>

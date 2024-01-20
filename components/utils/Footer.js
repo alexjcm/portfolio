@@ -4,8 +4,10 @@ import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
 
 import styles from './Footer.module.css';
+import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation('common');
   let date = new Date();
   let year = date.getFullYear();
 
@@ -13,7 +15,7 @@ export default function Footer() {
     <Container fluid className={styles.footer}>
       <Row className={styles.footerRow}>
         <Col md="4" className={styles.footerCopywright}>
-          <h3>Designed and developed by Alex John</h3>
+          <h3>{t('footer.createdBy')}</h3>
         </Col>
         <Col md="4" className={styles.footerCopywright}>
           <h3>Copyright © {year} AJ</h3>

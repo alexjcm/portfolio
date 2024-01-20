@@ -2,9 +2,8 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
 import Image from 'next/image';
-//import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next';
 
 import SecondaryHome from '../components/home/SecondaryHome';
 import styles from '../components/home/styles.module.css';
@@ -12,7 +11,7 @@ import Type from '../components/home/Type';
 import progressiveApp from '../public/assets/home/undraw_progressive_app.svg';
 
 function MainHome() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('home');
   return (
     <section className={styles.mainSection}>
       <Container fluid className={styles.homeSection} id="home">
@@ -23,7 +22,7 @@ function MainHome() {
                 {t('greeting')}..!!
               </h1>
               <h1 className={styles.headingName}>
-                I&apos;M
+                {t('iam')}
                 <strong className={styles.mainName}> ALEX JOHN CHAMBA</strong>
               </h1>
                 <Type />
@@ -39,15 +38,12 @@ function MainHome() {
   );
 }
 
-
-// export const getServerSideProps = async ({ locale })
 export const getStaticProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale ?? 'en-US', [
       'common',
-      // 'footer',
+      'home'
     ])),
-    // Will be passed to the page component as props
   },
 });
 

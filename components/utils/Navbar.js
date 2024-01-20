@@ -5,23 +5,22 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
 import logoDark from '../../public/assets/logo_dark_aj167.jpg';
 import logoLight from '../../public/assets/logo_light_aj167.jpg';
 import Toggle from '../dark-theme/Toggler';
-import LocaleSwitcher from '../LocaleSwitcher';
+import LocaleSwitcher from './LocaleSwitcher';
 import styles from './Navbar.module.css';
 
 export default function NavBar(props) {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
   const router = useRouter()
-  const { locale, defaultLocale } = router;
-  console.log(`Current locale: ${locale} - Default locale: ${defaultLocale}`);
-  //const { t } = useTranslation(['page-premium'])
-  const { t } = useTranslation('common')
+  //const { locale, defaultLocale } = router;
+  //console.log(`Current locale: ${locale} - Default locale: ${defaultLocale}`);
+  const { t } = useTranslation('common');
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -74,7 +73,7 @@ export default function NavBar(props) {
                 onClick={() => updateExpanded(false)}
                 aria-label='Link to home'
               >
-                Home
+                {t('navbar.home')}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -85,7 +84,7 @@ export default function NavBar(props) {
                 onClick={() => updateExpanded(false)}
                 aria-label='Link to about'
               >
-                {t('about')}
+                {t('navbar.about')}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -96,7 +95,7 @@ export default function NavBar(props) {
                 onClick={() => updateExpanded(false)}
                 aria-label='Link to projects'
               >
-                Projects
+                {t('navbar.projects')}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -107,11 +106,12 @@ export default function NavBar(props) {
                 onClick={() => updateExpanded(false)}
                 aria-label='Link to contact'
               >
-                Contact
+                {t('navbar.contact')}
               </Nav.Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
+        {/* <Toggle theme={props.theme} toggleTheme={props.toggleTheme} /> */}
         <Toggle theme={props.theme} toggleTheme={props.toggleTheme} />
         <LocaleSwitcher />
       </Container>

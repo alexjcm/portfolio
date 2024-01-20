@@ -1,5 +1,11 @@
 {
-    "language": "Language",
-    "about": "About",
-    "greeting": "Hi there"
+    "navbar": {
+        "about": "About",
+        "home": "Home",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "footer": {
+        "createdBy": "Designed and developed by Alex John"
+    }
 }

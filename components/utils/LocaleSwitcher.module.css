@@ -1,0 +1,14 @@
+.pLeft {
+    padding-left: 20px;
+}
+
+.selectLang {
+    height: 35px;
+    width: 92px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    color: white;
+    background-color: rgb(15, 15, 29);
+    border-color: rgb(39, 38, 38);
+}

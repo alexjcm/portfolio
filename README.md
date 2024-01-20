@@ -32,10 +32,11 @@ npm install
 Run the development server:
 
 ```bash
-npm run dev
+npm run start:dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 
 Generate an optimized version of your application for production.
 Build the production application in the .next folder.

@@ -26,7 +26,7 @@ function App({ Component, pageProps }) {
           <GlobalStyles />
           <CustomParticles />
           <div id="scroll">
-            <Navbar theme={theme} toggleTheme={themeToggler} />            
+            <Navbar theme={theme} toggleTheme={themeToggler} />
           </div>
         </>
         <Head>

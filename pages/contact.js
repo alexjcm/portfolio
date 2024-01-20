@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 import styles from '../components/contact/Contact.module.css';
 import { validateEmail } from '../components/utils/util';
@@ -7,8 +9,10 @@ import AlertMessage from '../components/contact/AlertMessage';
 
 import logger from '../logger/logger'
 
-export default function Contact() {
-  const [buttonText, setButtonText] = useState('Submit');
+function Contact() {
+  const { t } = useTranslation('contact');
+
+  const [buttonText, setButtonText] = useState(t('submit'));
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -72,7 +76,7 @@ export default function Contact() {
 
     event.preventDefault();
 
-    setButtonText('Submitting...');
+    setButtonText(t('submitting'));
 
     // 02 Submit
     await fetch(`${process.env.NEXT_PUBLIC_API_URL}/mailer/sendMail`, {
@@ -95,13 +99,13 @@ export default function Contact() {
       .catch((error) => {
         logger.error(error);
       }).finally(() => {
-        setButtonText('Submit');
+        setButtonText(t('submit'));
       })
   };
 
   return (
     <div className={styles.contactSection}>
-      <h4 className={styles.contactInfo}>Feel free drop-in a mail here!</h4>
+      <h4 className={styles.contactInfo}>{t('sendEmail')}</h4>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="inputName">
           <div className={styles.floatLabel}>
@@ -110,9 +114,9 @@ export default function Contact() {
               required
               aria-label="Your name" />
             <label htmlFor="inputName" className={nameIsActive ? 'Active' : ''}>
-              Your name
+              {t('yourName')}
             </label>
-            <Form.Control.Feedback type="invalid">Please enter a name.</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">{t('enterName')}</Form.Control.Feedback>
           </div>
         </Form.Group>
         <Form.Group controlId="inputEmail">
@@ -124,9 +128,9 @@ export default function Contact() {
               aria-label="Your email"
             />
             <label htmlFor="inputEmail" className={emailIsActive ? 'Active' : ''}>
-              Email
+              {t('email')}
             </label>
-            <Form.Control.Feedback type="invalid">Please enter your email.</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">{t('enterEmail')}</Form.Control.Feedback>
           </div>
         </Form.Group>
         <Form.Group controlId="inputMessage">
@@ -140,9 +144,9 @@ export default function Contact() {
               aria-label="Your message"
             />
             <label htmlFor="inputMessage" className={messageIsActive ? 'Active' : ''}>
-              Message
+              {t('message')}
             </label>
-            <Form.Control.Feedback type="invalid">Please enter your message.</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">{t('enterMessage')}</Form.Control.Feedback>
           </div>
         </Form.Group>
         <Button
@@ -160,3 +164,14 @@ export default function Contact() {
     </div>
   );
 }
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en-US', [
+      'common',
+      'contact',
+    ])),
+  },
+});
+
+export default Contact;

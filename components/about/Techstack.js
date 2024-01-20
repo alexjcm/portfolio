@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { DiJava, DiJavascript1, DiNodejs, DiPython, DiReact } from 'react-icons/di';
+import { DiAngularSimple, DiJava, DiNodejs, DiReact } from 'react-icons/di';
+import { SiSpringboot } from 'react-icons/si';
 
 import styles from './styles.module.css';
 
@@ -14,7 +15,12 @@ export default function Techstack() {
       </Col>
       <Col xs={4} md={2} className={styles.techIcons}>
         <div className={styles.iconTechColor}>
-          <DiJavascript1 />
+          <DiAngularSimple />
+        </div>
+      </Col>
+      <Col xs={4} md={2} className={styles.techIcons}>
+        <div className={styles.iconTechColor}>
+          <SiSpringboot />
         </div>
       </Col>
       <Col xs={4} md={2} className={styles.techIcons}>
@@ -25,11 +31,6 @@ export default function Techstack() {
       <Col xs={4} md={2} className={styles.techIcons}>
         <div className={styles.iconTechColor}>
           <DiReact />
-        </div>
-      </Col>
-      <Col xs={4} md={2} className={styles.techIcons}>
-        <div className={styles.iconTechColor}>
-          <DiPython />
         </div>
       </Col>
     </Row>

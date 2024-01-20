@@ -5,29 +5,31 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
 
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 import versionControl from '../../public/assets/home/undraw_version_control.svg';
 import styles from './styles.module.css';
 
 export default function SecondaryHome() {
+  const { t } = useTranslation('home');
   return (
     <Container fluid className={styles.homeAboutSection} id="about">
       <Container>
         <Row>
           <Col md={7} className={styles.homeAboutDescription}>
             <h1 style={{ fontSize: '2.5em' }}>
-              LET ME <span className={styles.purple}> INTRODUCE </span> MYSELF
+              {t('letMe')} <span className={styles.purple}> {t('introduce')} </span> {t('myself')}
             </h1>
             <p className={styles.homeAboutBody}>
-              My favorite programming languages are the classic
+              {t('favoriteLanguages')}
               <i>
-                <b className={styles.purple}> Java and Javascript. </b>
+                <b className={styles.purple}> {(t('languages'))} </b>
               </i>
-              Among my favorite frameworks are
+              {t('favoriteFrameworks')}
               <i>
-                <b className={styles.purple}> Spring Boot, Express.js and Next.js. </b>
+                <b className={styles.purple}> {t('frameworks')} </b>
               </i>
-              My field of interest is the creation of web-based software solutions using the latest technology.
+              {t('myInterest')}
             </p>
           </Col>
           <Col md={5} className={styles.myAvatar}>
@@ -41,9 +43,9 @@ export default function SecondaryHome() {
             <br />
             <br />
             <br />
-            <h1>FIND ME ON</h1>
+            <h1>{t('findMe')}</h1>
             <p className={styles.homeAboutSocialTextSize}>
-              Feel free to <span className={styles.purple}>connect </span>with me
+              {t('feelFree')} <span className={styles.purple}>{t('contact')} </span> {t('me')}
             </p>
             <ul className={styles.homeAboutSocialLinks}>
               <li className={styles.socialIcons}>

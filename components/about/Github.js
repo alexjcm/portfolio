@@ -2,14 +2,17 @@ import React from 'react';
 import { Row } from 'react-bootstrap';
 import GitHubCalendar from 'react-github-calendar';
 import { Tooltip } from 'react-tooltip'
+import { useTranslation } from 'next-i18next';
 
 import styles from './styles.module.css';
 
 export default function Github() {
+  const { t } = useTranslation('about');
+
   return (
     <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>
       <h1 className={styles.projectHeading} style={{ paddingBottom: '20px' }}>
-        Days I <strong className={styles.purple}>Code</strong>
+        {t('daysI')} <strong className={styles.purple}>{t('coded')}</strong>
       </h1>
       <GitHubCalendar
         username="alexjcm"
