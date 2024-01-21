@@ -1,5 +1,3 @@
-// This file sets a custom webpack configuration to use your Next.js app
-// with Sentry.
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 const { withSentryConfig } = require('@sentry/nextjs');
 
@@ -7,6 +5,9 @@ const { i18n } = require('./next-i18next.config')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  sentry: {
+    hideSourceMaps: true,
+  },
   reactStrictMode: true,
   compiler: {
     styledComponents: true,

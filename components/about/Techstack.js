@@ -1,5 +1,6 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import { DiAngularSimple, DiJava, DiNodejs, DiReact } from 'react-icons/di';
 import { SiSpringboot } from 'react-icons/si';
 
