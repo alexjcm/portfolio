@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
 import GitHubCalendar from 'react-github-calendar';
 import { Tooltip } from 'react-tooltip'
 import { useTranslation } from 'next-i18next';
@@ -10,7 +10,7 @@ export default function Github() {
   const { t } = useTranslation('about');
 
   return (
-    <Row style={{ justifyContent: 'center', paddingBottom: '10px' }}>
+    <Row className={styles.githubContainer}>
       <h1 className={styles.projectHeading} style={{ paddingBottom: '20px' }}>
         {t('daysI')} <strong className={styles.purple}>{t('coded')}</strong>
       </h1>

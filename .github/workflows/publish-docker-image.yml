@@ -41,7 +41,7 @@ jobs:
             *DOCKER IMAGE PUSH SUCCESSFUL*
 
             Repository: *${{ github.repository }}*
-               
+
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
       - name: Docker Hub description

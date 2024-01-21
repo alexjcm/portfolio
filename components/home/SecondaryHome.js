@@ -1,5 +1,7 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
@@ -17,7 +19,7 @@ export default function SecondaryHome() {
       <Container>
         <Row>
           <Col md={7} className={styles.homeAboutDescription}>
-            <h1 style={{ fontSize: '2.5em' }}>
+            <h1 className={styles.homeAboutHeading}>
               {t('letMe')} <span className={styles.purple}> {t('introduce')} </span> {t('myself')}
             </h1>
             <p className={styles.homeAboutBody}>

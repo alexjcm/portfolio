@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -104,7 +106,7 @@ function Contact() {
   };
 
   return (
-    <div className={styles.contactSection}>
+    <Container className={styles.contactSection}>
       <h4 className={styles.contactInfo}>{t('sendEmail')}</h4>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="inputName">
@@ -161,7 +163,7 @@ function Contact() {
           <AlertMessage variant={paramsAlert.variant} message={paramsAlert.message} dismissible={paramsAlert.dismissible} onClose={() => setShowAlert(false)} />
         )}
       </Form>
-    </div>
+    </Container>
   );
 }
 

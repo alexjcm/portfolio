@@ -25,6 +25,42 @@
   color: white;
 }
 
+/* .navbar-toggler { */
+.navbarToggleCustom {
+  background-color: rgb(148, 197, 250);
+}
+@media (max-width: 767px) {
+  /* .navbarToggleCustom {
+    background-color: rgb(233, 238, 243);
+  } */
+}
+
+.navbarLeftAndRight {
+  padding-top: 7px;
+  padding-left: 250px;
+  padding-right: 190px;
+}
+/* mobile screens*/
+@media (max-width: 767px) {
+  .navbarLeftAndRight {
+    padding-left: 15px;
+  }
+}
+/* tablet screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbarLeftAndRight {
+    padding-left: 55px;
+    padding-right: 45px;
+  }
+}
+
+/* desktop screens */
+@media (min-width: 1024px ) and (max-width: 1420px) {
+  .navbarLeftAndRight {
+    padding-left: 65px;
+    padding-right: 40px;
+  }
+}
 
 .navbarToggler {
   padding: 0.25rem 1.5rem;
@@ -87,6 +123,10 @@
   .navbarNav .navItem a::after {
     display: none;
   }
+}
+
+.navbarBrandLink {
+  padding-right: 160px;
 }
 
 .navbarBrand {

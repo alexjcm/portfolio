@@ -8,13 +8,43 @@
 
 .projectSection {
   position: relative;
-  padding: 150px 30px;
+  padding: 150px 120px;
   background-image: white;
 }
 
 .projectCard {
-  padding: 25px;
+  padding: 50px;
   height: auto;
+}
+
+/* Styles for laptops */
+@media (min-width: 1024px) and (max-width: 1420px) {
+  .projectSection {
+    padding: 150px 45px;
+  }
+  .projectCard {
+    padding: 20px;
+  }
+}
+
+/* Styles for tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .projectSection {
+    padding: 150px 30px;
+  }
+  .projectCard {
+    padding: 10px;
+  }
+}
+
+/* Styles for mobile devices */
+@media (max-width: 767px) {
+  .projectSection {
+    padding: 150px 35px;
+  }
+  .projectCard {
+    padding: 40px;
+  }
 }
 
 .projectCardView {

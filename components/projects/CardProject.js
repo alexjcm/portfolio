@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import { BiLinkExternal } from 'react-icons/bi';
 import { useTranslation } from 'next-i18next';
 

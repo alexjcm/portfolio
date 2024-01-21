@@ -6,6 +6,7 @@
   position: relative;
   padding-top: 100px;
   padding-bottom: 30px;
+  padding-right: 150px;
   background-image: white;
   color: white;
 }
@@ -79,6 +80,11 @@
   font-weight: 500;
   padding-top: 10px;
 }
+/* @media (max-width: 767px) {
+  .projectHeading {
+    padding-top: 10px;
+  }
+} */
 
 /*******Tech Icons******/
 .iconTechColor {
@@ -91,4 +97,9 @@
   font-weight: 500;
   padding-top: 10px;
   text-align: center;
+}
+
+.githubContainer {
+  justify-content: center;
+  padding-bottom: 10px;
 }

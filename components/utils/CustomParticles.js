@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadFull } from 'tsparticles';
+// import { loadFull } from 'tsparticles';
+import { loadSlim } from "@tsparticles/slim";
 
 const CustomParticles = () => {
   const [ init, setInit ] = useState(false);
@@ -8,14 +9,15 @@ const CustomParticles = () => {
   // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-        await loadFull(engine);
+        // await loadFull(engine);
+        await loadSlim(engine);
     }).then(() => {
         setInit(true);
     });
   }, []);
 
   const particlesLoaded = (container) => {
-    console.log(container);
+    console.log('Particles container loaded', container);
   };
 
   return (
