@@ -10,8 +10,8 @@ export default function CardProject(props) {
   const { t } = useTranslation('projects');
   return (
     <Card className={styles.projectCardView}>
-      <Card.Img style={{ height: '15rem' }} variant="top" src={props.imgPath} />
-      <Card.Body>
+      <Card.Img className={styles.projectCardImage} variant="top" src={props.imgPath} />
+      <Card.Body className={styles.cardBodyText}>
         <Card.Title className={styles.projectCardTitle}>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: 'justify' }}>{props.description}</Card.Text>
       </Card.Body>

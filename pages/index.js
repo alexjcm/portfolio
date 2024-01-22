@@ -39,7 +39,7 @@ function MainHome() {
               </h1>
               <Type />
             </Col>
-            <Col md={4} style={{ paddingTop: '80px' }}>
+            <Col className={styles.homeImg}>
               <Image src={progressiveApp} className={styles.imgFluid} alt="progressiveApp" priority />
             </Col>
           </Row>
