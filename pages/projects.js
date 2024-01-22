@@ -13,7 +13,7 @@ import logger from '../logger/logger'
 function Projects() {
   const [projects, setProjects] = useState([]);
   const { t } = useTranslation('projects');
-  
+
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`)
       .then((response) => response.json())

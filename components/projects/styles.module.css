@@ -66,3 +66,31 @@
   overflow: hidden;
   box-shadow: 0 4px 4px 5px rgba(75, 202, 211, 0.561);
 }
+
+/* @media (max-width: 767px) {
+  .projectCardView {
+    height: 100%;
+  }
+} */
+
+.projectCardImage {
+  height: 15rem;
+}
+@media (max-width: 767px) {
+  .projectCardImage {
+    height: 10rem;
+  }
+}
+
+.cardBodyText {
+  padding: 1.25rem;
+}
+
+@media (max-width: 767px) {
+  .cardBodyText {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

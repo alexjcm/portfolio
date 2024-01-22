@@ -18,6 +18,7 @@
 /* Styles for mobile devices */
 @media (max-width: 767px) {
   .imgFluid {
+    padding-left: 10px;
     padding-top: 95px;
     width: 90%;
     height: auto;
@@ -37,12 +38,23 @@
   }
 }
 
+.homeImg {
+  padding-left: 30px;
+  padding-top: 80px;
+}
+@media (max-width: 767px) {
+  .homeImg {
+    padding-left: 40px;
+    padding-top: 80px;
+  }
+}
+
 .homeHeader {
   padding-top: 80px;
   padding-left: 50px;
 }
 
-/* @media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .homeHeader {
     padding-top: 75px;
     padding-left: 78px;
@@ -50,10 +62,11 @@
 }
 @media (max-width: 767px) {
   .homeHeader {
-    padding-top: 75px;
+    padding-top: 55px;
     padding-left: 38px;
+    /* padding-right: 1px; */
   }
-} */
+}
 
 .homeSection {
   z-index: -1;
@@ -63,6 +76,12 @@
   padding-top: 30px;
   padding-left: 0px;
   padding-right: 200px;
+}
+
+@media (max-width: 767px) {
+  .homeSection {
+    padding-right: 30px;
+  }
 }
 
 .homeContent {
@@ -94,6 +113,8 @@
   .myAvatar {
     padding-top: 2em;
     padding-bottom: 2em;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
@@ -103,6 +124,13 @@
   padding-top: 70px;
   padding-left: 50px;
   padding-right: 200px;
+}
+
+@media (max-width: 767px) {
+  .homeAboutSection {
+    padding-left: 35px;
+    padding-right: 50px;
+  }
 }
 
 .homeAboutDescription {

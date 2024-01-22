@@ -11,6 +11,14 @@
   color: white;
 }
 
+@media (max-width: 767px) {
+  .aboutSection {
+    padding-top: 100px;
+    padding-bottom: 30px;
+    padding-right: 5px;
+  }
+}
+
 .aboutCardTextSize {
   font-size: 1.4em;
 }
