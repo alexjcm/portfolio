@@ -10,22 +10,20 @@ export default function TagsCloud() {
     const texts = [
       'Java',
       'Spring Boot',
-      'Python',
       'Flask',
       'Javascript',
       'NodeJS',
       'ExpressJS',
-      'ReactJS',
       'NextJS',
       'Angular',
       'Git',
       'Webpack',
-      'Bootstrap',
       'PostgresSQL',
+      'MongoDB',
       'Jest',
       'Docker',
       'Digital Ocean',
-      'Ubuntu'
+      'Redis'
     ];
     const options = {
       radius: 270,

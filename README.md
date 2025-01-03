@@ -14,16 +14,10 @@
 
 ## Prerrequisites
 
-- NodeJs 18.18
+- NodeJs 22
 - [portfolio-ws](https://github.com/alexjcm/portfolio-ws)
 
 ## Installation
-
-Clone or download this repository:
-
-```
-git clone https://github.com/alexjcm/portfolio.git
-```
 
 ```bash
 npm install
@@ -78,6 +72,8 @@ docker stop portfolio
 ## TODO
 
 - Test cases written with Jest and React Testing Library
+- Update or replace "typewriter-effect": "^2.21.0" in Type component
+- Migrate Pages Router (/pages) to App Router (/app)
 
 ## Conventional commits
 

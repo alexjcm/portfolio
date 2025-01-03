@@ -1,16 +1,15 @@
 import React from 'react';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import { Row, Col } from 'react-bootstrap';
 import {
-  SiApachenetbeanside,
   SiDigitalocean,
   SiDocker,
   SiGit,
   SiIntellijidea,
   SiLinux,
+  SiMacos,
   SiPostman,
-  SiVisualstudiocode,
 } from 'react-icons/si';
+import { VscVscode } from "react-icons/vsc";
 
 import styles from './styles.module.css';
 
@@ -29,17 +28,12 @@ export default function Toolstack() {
       </Col>
       <Col xs={4} md={2} className={styles.techIcons}>
         <div className={styles.iconTechColor}>
-          <SiVisualstudiocode />
+          <VscVscode />
         </div>
       </Col>
       <Col xs={4} md={2} className={styles.techIcons}>
         <div className={styles.iconTechColor}>
           <SiIntellijidea />
-        </div>
-      </Col>
-      <Col xs={4} md={2} className={styles.techIcons}>
-        <div className={styles.iconTechColor}>
-          <SiApachenetbeanside />
         </div>
       </Col>
       <Col xs={4} md={2} className={styles.techIcons}>
@@ -50,6 +44,11 @@ export default function Toolstack() {
       <Col xs={4} md={2} className={styles.techIcons}>
         <div className={styles.iconTechColor}>
           <SiLinux />
+        </div>
+      </Col>
+      <Col xs={4} md={2} className={styles.techIcons}>
+        <div className={styles.iconTechColor}>
+          <SiMacos />
         </div>
       </Col>
       <Col xs={4} md={2} className={styles.techIcons}>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'next/image';
@@ -12,14 +11,11 @@ import logoLight from '../../public/assets/logo_light_aj167.jpg';
 import Toggle from '../dark-theme/Toggler';
 import LocaleSwitcher from './LocaleSwitcher';
 import styles from './Navbar.module.css';
-import { Col, Row } from 'react-bootstrap';
 
 export default function NavBar(props) {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
   const router = useRouter()
-  //const { locale, defaultLocale } = router;
-  //console.log(`Current locale: ${locale} - Default locale: ${defaultLocale}`);
   const { t } = useTranslation('common');
 
   function scrollHandler() {
@@ -50,7 +46,6 @@ export default function NavBar(props) {
           src={props.theme === 'light' ? logoLight : logoDark}
           className={`${styles.imgFluid} ${styles.logo}`}
           alt="brand"
-          priority
         />
       </Nav.Link>
       <Navbar.Toggle
