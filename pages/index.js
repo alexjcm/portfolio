@@ -40,7 +40,7 @@ function MainHome() {
               <Type />
             </Col>
             <Col className={styles.homeImg}>
-              <Image src={progressiveApp} className={styles.imgFluid} alt="progressiveApp" priority />
+              <Image src={progressiveApp} className={styles.imgFluid} alt="progressiveApp" priority/>
             </Col>
           </Row>
         </Container>

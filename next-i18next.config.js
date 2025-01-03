@@ -1,14 +1,9 @@
 module.exports = {
-    debug: process.env.NODE_ENV === 'development',
+    // debug: process.env.NODE_ENV === 'development',
+    debug: false,
     i18n: {
         locales: ['en-US', 'es'],
         defaultLocale: 'en-US',
-        //defaultLocale: 'default',
-        // localeDetection: false,
+        localeDetection: false,
     },
-    /** To avoid issues when deploying to some paas (vercel...) */
-    // localePath:
-    //     typeof window === 'undefined'
-    //         ? require('path').resolve('./public/locales')
-    //         : '/locales',
 }

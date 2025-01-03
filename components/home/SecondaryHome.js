@@ -36,7 +36,7 @@ export default function SecondaryHome() {
           </Col>
           <Col md={5} className={styles.myAvatar}>
             <Tilt reset={false} tiltReverse={true}>
-              <Image src={versionControl} className={styles.imgSecondFluid} alt="avatar" priority />
+              <Image src={versionControl} className={styles.imgSecondFluid} alt="avatar" loading='lazy'/>
             </Tilt>
           </Col>
         </Row>
