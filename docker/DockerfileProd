@@ -4,9 +4,8 @@ FROM node:22-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
-# Or
-#RUN npm install --production
+RUN npm install --include=optional sharp
+
 
 
 ## 2. Builder stage. Rebuild the source code only when needed
@@ -14,21 +13,20 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-# Use the corresponding env file for each environment.
-COPY .env.production .env.production
 RUN npm run build
+
 
 
 ## 3. Runner stage. Copy all the files and run next
 FROM node:22-alpine AS runner
 WORKDIR /app
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # Define a user and a group, set the user as the owner of all the files; this prevents to running the image with the root user
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/next.config.mjs ./
 COPY --from=builder /app/next-i18next.config.js ./
 COPY --from=builder /app/public ./public
 
@@ -39,7 +37,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 EXPOSE 3000
-ENV PORT 3000
+ENV PORT=3000
 
 # Start the Node server
 CMD ["node", "server.js"]

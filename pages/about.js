@@ -19,21 +19,8 @@ function About() {
     <Container fluid className={styles.aboutSection}>
       <Container>
         <Row style={{ justifyContent: 'center', padding: '10px' }}>
-          <Col
-            md={6}
-            style={{
-              justifyContent: 'center',
-              paddingTop: '30px',
-              paddingRight: '40px',
-            }}
-          >
-            <h1
-              style={{
-                fontSize: '2.1em',
-                paddingTop: '20px',
-                paddingBottom: '20px'
-              }}
-            >
+          <Col md={6} className={styles.aboutParagraphOne}>
+            <h1 className={styles.aboutTitleOne}>
               {t('whoQ')} <strong className={styles.purple}>{t('iamQ')}</strong>
             </h1>
             <Aboutcard />

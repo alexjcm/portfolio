@@ -18,7 +18,6 @@ export default function Github() {
         username="alexjcm"
         blockSize={14}
         blockMargin={5}
-        // theme={colourTheme}
         fontSize={16}
         renderBlock={(block, activity) =>
           React.cloneElement(block, {
