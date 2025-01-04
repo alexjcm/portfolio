@@ -13,9 +13,9 @@ import LocaleSwitcher from './LocaleSwitcher';
 import styles from './Navbar.module.css';
 
 export default function NavBar(props) {
-  const [expand, updateExpanded] = useState(false);
+  const [expand, setExpand] = useState(false);
   const [navColour, updateNavbar] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
   const { t } = useTranslation('common');
 
   function scrollHandler() {
@@ -35,10 +35,12 @@ export default function NavBar(props) {
       expand="md"
       className={navColour ? `${styles.sticky} ${styles.navbarLeftAndRight}` : `${styles.navbar} ${styles.navbarLeftAndRight}`}
     >
-      <Nav.Link
+      <Navbar.Brand
         as={Link}
         href="/"
-        onClick={() => updateExpanded(false)}
+        onClick={() => {
+          setExpand(false);
+        }}
         aria-label='Link to home'
         className={styles.navbarBrandLink}
       >
@@ -47,49 +49,57 @@ export default function NavBar(props) {
           className={`${styles.imgFluid} ${styles.logo}`}
           alt="brand"
         />
-      </Nav.Link>
+      </Navbar.Brand>
+
+      {/* Toggle for small screens */}
       <Navbar.Toggle
         aria-controls="navbarScroll"
         className={styles.navbarToggleCustom}
-        onClick={() => {
-          updateExpanded(expand ? false : 'expanded');
-        }}
+        onClick={() => setExpand(expand ? false : 'expanded') }
       >
       </Navbar.Toggle>
+
       <Navbar.Collapse id="navbarScroll">
-        <Nav className="ml-auto" defaultActiveKey="#home" navbarScroll>
+        <Nav
+          className="ms-auto"
+          navbarScroll
+        >
           <Nav.Link
-            className={navColour ? styles.myLightNavLink : styles.myLightNavLink2}
+            className={`${navColour ? styles.myLightNavLink : ''}
+              ${router.pathname === '/' ? styles.activeLink : ''}`}
             as={Link}
             href="/"
-            onClick={() => updateExpanded(false)}
+            onClick={() => setExpand(false)}
             aria-label='Link to home'
           >
             {t('navbar.home')}
           </Nav.Link>
           <Nav.Link
-            className={navColour ? styles.lightNavLink : ''}
+            className={`${navColour ? styles.lightNavLink : ''}
+            ${router.pathname === '/about' ? styles.activeLink : ''}`}
             as={Link}
             href="/about"
-            onClick={() => updateExpanded(false)}
+            onClick={() => setExpand(false)}
             aria-label='Link to about'
           >
             {t('navbar.about')}
           </Nav.Link>
           <Nav.Link
-            className={navColour ? styles.lightNavLink : ''}
+            className={`${navColour ? styles.lightNavLink : ''}
+            ${router.pathname === '/projects' ? styles.activeLink : ''}`}
             as={Link}
             href="/projects"
-            onClick={() => updateExpanded(false)}
+            onClick={() => setExpand(false)}
             aria-label='Link to projects'
           >
             {t('navbar.projects')}
           </Nav.Link>
           <Nav.Link
-            className={navColour ? styles.lightNavLink : ''}
+            className={`${navColour ? styles.lightNavLink : ''}
+            ${router.pathname === '/contact' ? styles.activeLink : ''}`}
             as={Link}
             href="/contact"
-            onClick={() => updateExpanded(false)}
+            onClick={() => setExpand(false)}
             aria-label='Link to contact'
           >
             {t('navbar.contact')}

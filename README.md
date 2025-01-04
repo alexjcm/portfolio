@@ -1,4 +1,4 @@
-# My Portfolio Frontend with React.js and Next.js
+# My Portfolio Frontend with Next.js
 
 [![Publish docker image (CI)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml/badge.svg?branch=main)](https://github.com/alexjcm/portfolio/actions/workflows/publish-docker-image.yml) [![Code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/alexjcm/portfolio) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE)
 
@@ -60,7 +60,7 @@ docker pull alexjcm/portfolio
 Start container:
 
 ```bash
-docker run --restart unless-stopped -d -p 3000:3000 --name portfolio alexjcm/portfolio
+docker run --restart unless-stopped -d -p 3000:3000 --name portfolio --env-file $HOME/secrets/portfolio/.env.production alexjcm/portfolio
 ```
 
 Stop container:
