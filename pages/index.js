@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -14,15 +13,6 @@ import progressiveApp from '../public/assets/home/undraw_progressive_app.svg';
 
 function MainHome() {
   const { t } = useTranslation('home');
-
-  const fetchApiRef = useRef();
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production' && !fetchApiRef.current) {
-      fetchApiRef.current = fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects/incrementVisit`)
-            .then((response) => response.json())
-        .catch((error) => logger.error(error));
-    }
-  }, []);
 
   return (
     <section className={styles.mainSection}>

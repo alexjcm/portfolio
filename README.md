@@ -48,7 +48,7 @@ npm start
 Build image:
 
 ```bash
-docker build -t alexjcm/portfolio -f docker/DockerfileProd .
+docker build -t alexjcm/portfolio -f docker/DockerfileProd . --platform linux/amd64
 ```
 
 Or
