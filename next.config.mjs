@@ -26,8 +26,8 @@ const nextConfig = {
 };
 
 const sentryOptions = {
-  org: "ajcm",
-  project: "node-express-portfolio-ws",
+  org: 'ajcm',
+  project: 'portfolio-web',
 
   // An auth token is required for uploading source maps.
   // authToken: process.env.SENTRY_AUTH_TOKEN,

@@ -31,7 +31,6 @@ npm run start:dev
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-
 Generate an optimized version of your application for production.
 Build the production application in the .next folder.
 
@@ -60,7 +59,8 @@ docker pull alexjcm/portfolio
 Start container:
 
 ```bash
-docker run --restart unless-stopped -d -p 3000:3000 --name portfolio --env-file $HOME/secrets/portfolio/.env.production alexjcm/portfolio
+docker run --restart unless-stopped -d -p 3000:3000 \
+--name portfolio --env-file $HOME/secrets/portfolio/.env.production alexjcm/portfolio
 ```
 
 Stop container:
